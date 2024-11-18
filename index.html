@@ -5,18 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Testimonials</title>
     <style>
+        /* Glass effect background for the entire section */
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: #00467F;
+            background-image: radial-gradient(ellipse farthest-corner at 80vw 15vh,
+                rgba(250, 240, 128, 0.5) 5%, rgba(250, 240, 128, 0) 95%);
+            background-attachment: fixed;
+            font-family: Arial, sans-serif;
+        }
+
         /* Testimonials Section */
         #testimonials {
-            background-color: #f9f9f9;
+            background: rgba(255, 255, 255, 0.1); /* transparent white */
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 15px;
             padding: 4rem 1rem;
             text-align: center;
+            width: 90%;
+            margin: 2rem auto;
+            color: white;
         }
 
         .section-title {
             font-size: 2rem;
             font-weight: bold;
             margin-bottom: 2rem;
-            color: #333;
+            color: #fff;
         }
 
         .testimonials-container {
@@ -29,7 +49,7 @@
         }
 
         .card {
-            background: rgba(255, 255, 255, 0.25);
+            background: rgba(255, 255, 255, 0.2);
             box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
             backdrop-filter: blur(7px);
             -webkit-backdrop-filter: blur(7px);
@@ -40,19 +60,20 @@
             scroll-snap-align: center;
             width: 250px;
             text-align: center;
+            color: white;
         }
 
         .title {
             font-size: 1.1rem;
             font-style: italic;
             margin-bottom: 1rem;
-            color: #555;
+            color: #ddd;
         }
 
         h4 {
             font-size: 1rem;
             font-weight: bold;
-            color: #333;
+            color: #fff;
         }
 
         /* Responsive Design */
@@ -89,4 +110,4 @@
     </section>
 
 </body>
-</html>
+                </html>
