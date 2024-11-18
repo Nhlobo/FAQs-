@@ -1,139 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Professional FAQ Section</title>
-  <style>
-    /* General Styles */
-    body {
-      font-family: 'Arial', sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f5f7fa;
-      color: #333;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testimonials</title>
+    <style>
+        /* Testimonials Section */
+        #testimonials {
+            background-color: #f9f9f9;
+            padding: 4rem 1rem;
+            text-align: center;
+        }
 
-    .faq-section {
-      max-width: 800px;
-      margin: 50px auto;
-      padding: 20px;
-      text-align: center;
-    }
+        .section-title {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 2rem;
+            color: #333;
+        }
 
-    .section-title {
-      font-size: 2rem;
-      font-weight: bold;
-      margin-bottom: 40px;
-      color: #222;
-    }
+        .testimonials-container {
+            overflow: auto;
+            display: flex;
+            scroll-snap-type: x mandatory;
+            width: 90%;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
 
-    /* FAQ Styles */
-    .faq-container {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
+        .card {
+            background: rgba(255, 255, 255, 0.25);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(7px);
+            -webkit-backdrop-filter: blur(7px);
+            border-radius: 10px;
+            padding: 2rem;
+            margin: 1rem;
+            flex-shrink: 0;
+            scroll-snap-align: center;
+            width: 250px;
+            text-align: center;
+        }
 
-    .faq-item {
-      background: #ffffff;
-      border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      overflow: hidden;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
+        .title {
+            font-size: 1.1rem;
+            font-style: italic;
+            margin-bottom: 1rem;
+            color: #555;
+        }
 
-    .faq-item:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
-    }
+        h4 {
+            font-size: 1rem;
+            font-weight: bold;
+            color: #333;
+        }
 
-    .faq-item h3 {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px;
-      font-size: 1.2rem;
-      font-weight: 500;
-      cursor: pointer;
-      margin: 0;
-    }
-
-    .faq-item h3::after {
-      content: "+";
-      font-size: 1.5rem;
-      font-weight: bold;
-      color: #0078d7;
-      transition: transform 0.3s ease;
-    }
-
-    .faq-item.active h3::after {
-      transform: rotate(45deg);
-    }
-
-    .faq-item p {
-      max-height: 0;
-      overflow: hidden;
-      margin: 0;
-      background: #f9f9f9;
-      padding: 0 20px;
-      font-size: 1rem;
-      color: #555;
-      transition: max-height 0.3s ease, padding 0.3s ease;
-    }
-
-    .faq-item.active p {
-      max-height: 100px; /* Adjust based on content */
-      padding: 15px 20px;
-    }
-
-    /* Responsive Design */
-    @media (max-width: 768px) {
-      .faq-section {
-        padding: 10px;
-      }
-    }
-  </style>
+        /* Responsive Design */
+        @media (min-width: 768px) {
+            .testimonials-container {
+                gap: 1.5rem;
+            }
+        }
+    </style>
 </head>
 <body>
-  <!-- ================= FAQ ================= -->
-  <section id="faq" class="faq-section">
-    <h2 class="section-title">Frequently Asked Questions</h2>
-    <div class="faq-container">
-      <div class="faq-item">
-        <h3>What services do you offer?</h3>
-        <p>We offer web development, mobile app development, maintenance & support, and consulting services to help your business thrive.</p>
-      </div>
-      <div class="faq-item">
-        <h3>How much do your services cost?</h3>
-        <p>Our pricing is competitive and tailored to meet the needs of businesses in South Africa. Please visit our <a href="pricing.html">Pricing Page</a> for more details.</p>
-      </div>
-      <div class="faq-item">
-        <h3>How long does a project take?</h3>
-        <p>Project timelines vary based on the complexity and requirements. We provide estimated timelines during the consultation phase.</p>
-      </div>
-      <div class="faq-item">
-        <h3>Do you offer support after the project is completed?</h3>
-        <p>Yes, we offer maintenance and support packages to ensure your website or app continues to perform optimally.</p>
-      </div>
-    </div>
-  </section>
 
-  <script>
-    // FAQ Toggle Logic
-    document.querySelectorAll('.faq-item').forEach((faq) => {
-      faq.addEventListener('click', () => {
-        // Collapse other open items
-        document.querySelectorAll('.faq-item.active').forEach((activeFaq) => {
-          if (activeFaq !== faq) {
-            activeFaq.classList.remove('active');
-          }
-        });
+    <!-- ================= TESTIMONIALS ================= -->
+    <section id="testimonials" class="container">
+        <h2 class="section-title">What Our Clients Say</h2>
+        <div class="testimonials-container">
+            <div class="card">
+                <p class="title">"Mapengo Innovations delivered a top-notch app for our business. Their professionalism and attention to detail were exceptional!"</p>
+                <h4>- John Doe, CEO of TechStart</h4>
+            </div>
+            <div class="card">
+                <p class="title">"The website they developed for us is exactly what we needed. Affordable and high-quality service!"</p>
+                <h4>- Jane Smith, Owner of LocalBiz</h4>
+            </div>
+            <div class="card">
+                <p class="title">"Excellent customer service and a product that exceeds expectations! Highly recommended!"</p>
+                <h4>- Alice Brown, Founder of InnovateTech</h4>
+            </div>
+            <div class="card">
+                <p class="title">"Fast, reliable, and exceptional quality work. We couldn't be happier with the result!"</p>
+                <h4>- Michael Johnson, Director of WebWorks</h4>
+            </div>
+        </div>
+    </section>
 
-        // Toggle current item
-        faq.classList.toggle('active');
-      });
-    });
-  </script>
 </body>
-  </html>
+</html>
