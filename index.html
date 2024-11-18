@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Professional FAQ Section</title>
+  <style>
+    /* General Styles */
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f5f7fa;
+      color: #333;
+    }
+
+    .faq-section {
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 40px;
+      color: #222;
+    }
+
+    /* FAQ Styles */
+    .faq {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .faq-item {
+      background: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .faq-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    }
+
+    .faq-question {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      font-size: 1.2rem;
+      font-weight: 500;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .faq-question p {
+      margin: 0;
+    }
+
+    .toggle {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #0078d7;
+      transition: transform 0.3s ease;
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      background: #f9f9f9;
+      padding: 0 20px;
+      transition: max-height 0.3s ease;
+    }
+
+    .faq-answer p {
+      font-size: 1rem;
+      color: #555;
+      margin: 15px 0;
+    }
+
+    .faq-item.active .faq-answer {
+      max-height: 100px; /* Adjust based on content */
+    }
+
+    .faq-item.active .toggle {
+      transform: rotate(45deg);
+    }
+
+    /* Smooth Animations */
+    @keyframes fadeInSlide {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .faq-item {
+      animation: fadeInSlide 0.5s ease;
+    }
+  </style>
+</head>
+<body>
+  <section class="faq-section">
+    <h1>Frequently Asked Questions</h1>
+    <div class="faq">
+      <div class="faq-item">
+        <div class="faq-question">
+          <p>What is your return policy?</p>
+          <span class="toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>You can return items within 30 days of purchase.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          <p>How do I track my order?</p>
+          <span class="toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>You can track your order through your account dashboard.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          <p>Do you ship internationally?</p>
+          <span class="toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>Yes, we ship to over 50 countries worldwide.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script>
+    // FAQ Toggle Logic
+    document.querySelectorAll('.faq-item').forEach((faq) => {
+      faq.addEventListener('click', () => {
+        // Collapse other open items
+        document.querySelectorAll('.faq-item.active').forEach((activeFaq) => {
+          if (activeFaq !== faq) {
+            activeFaq.classList.remove('active');
+          }
+        });
+
+        // Toggle current item
+        faq.classList.toggle('active');
+      });
+    });
+  </script>
+</body>
+</html>
