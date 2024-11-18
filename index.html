@@ -21,7 +21,7 @@
       text-align: center;
     }
 
-    h1 {
+    .section-title {
       font-size: 2rem;
       font-weight: bold;
       margin-bottom: 40px;
@@ -29,7 +29,7 @@
     }
 
     /* FAQ Styles */
-    .faq {
+    .faq-container {
       display: flex;
       flex-direction: column;
       gap: 20px;
@@ -48,7 +48,7 @@
       box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
     }
 
-    .faq-question {
+    .faq-item h3 {
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -56,92 +56,69 @@
       font-size: 1.2rem;
       font-weight: 500;
       cursor: pointer;
-      position: relative;
-    }
-
-    .faq-question p {
       margin: 0;
     }
 
-    .toggle {
+    .faq-item h3::after {
+      content: "+";
       font-size: 1.5rem;
       font-weight: bold;
       color: #0078d7;
       transition: transform 0.3s ease;
     }
 
-    .faq-answer {
-      max-height: 0;
-      overflow: hidden;
-      background: #f9f9f9;
-      padding: 0 20px;
-      transition: max-height 0.3s ease;
-    }
-
-    .faq-answer p {
-      font-size: 1rem;
-      color: #555;
-      margin: 15px 0;
-    }
-
-    .faq-item.active .faq-answer {
-      max-height: 100px; /* Adjust based on content */
-    }
-
-    .faq-item.active .toggle {
+    .faq-item.active h3::after {
       transform: rotate(45deg);
     }
 
-    /* Smooth Animations */
-    @keyframes fadeInSlide {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    .faq-item p {
+      max-height: 0;
+      overflow: hidden;
+      margin: 0;
+      background: #f9f9f9;
+      padding: 0 20px;
+      font-size: 1rem;
+      color: #555;
+      transition: max-height 0.3s ease, padding 0.3s ease;
     }
 
-    .faq-item {
-      animation: fadeInSlide 0.5s ease;
+    .faq-item.active p {
+      max-height: 100px; /* Adjust based on content */
+      padding: 15px 20px;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .faq-section {
+        padding: 10px;
+      }
     }
   </style>
 </head>
 <body>
-  <section class="faq-section">
-    <h1>Frequently Asked Questions</h1>
-    <div class="faq">
+  <!-- ================= FAQ ================= -->
+  <section id="faq" class="faq-section">
+    <h2 class="section-title">Frequently Asked Questions</h2>
+    <div class="faq-container">
       <div class="faq-item">
-        <div class="faq-question">
-          <p>What is your return policy?</p>
-          <span class="toggle">+</span>
-        </div>
-        <div class="faq-answer">
-          <p>You can return items within 30 days of purchase.</p>
-        </div>
+        <h3>What services do you offer?</h3>
+        <p>We offer web development, mobile app development, maintenance & support, and consulting services to help your business thrive.</p>
       </div>
       <div class="faq-item">
-        <div class="faq-question">
-          <p>How do I track my order?</p>
-          <span class="toggle">+</span>
-        </div>
-        <div class="faq-answer">
-          <p>You can track your order through your account dashboard.</p>
-        </div>
+        <h3>How much do your services cost?</h3>
+        <p>Our pricing is competitive and tailored to meet the needs of businesses in South Africa. Please visit our <a href="pricing.html">Pricing Page</a> for more details.</p>
       </div>
       <div class="faq-item">
-        <div class="faq-question">
-          <p>Do you ship internationally?</p>
-          <span class="toggle">+</span>
-        </div>
-        <div class="faq-answer">
-          <p>Yes, we ship to over 50 countries worldwide.</p>
-        </div>
+        <h3>How long does a project take?</h3>
+        <p>Project timelines vary based on the complexity and requirements. We provide estimated timelines during the consultation phase.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Do you offer support after the project is completed?</h3>
+        <p>Yes, we offer maintenance and support packages to ensure your website or app continues to perform optimally.</p>
       </div>
     </div>
   </section>
+
   <script>
     // FAQ Toggle Logic
     document.querySelectorAll('.faq-item').forEach((faq) => {
@@ -159,4 +136,4 @@
     });
   </script>
 </body>
-</html>
+  </html>
