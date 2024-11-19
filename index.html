@@ -5,83 +5,201 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Testimonials</title>
     <style>
-        /* Glass effect background for the entire section */
-        body {
-            margin: 0;
-            padding: 0;
-            width: 100vw;
-            height: 100vh;
-            background-color: #00467F;
-            background-image: radial-gradient(ellipse farthest-corner at 80vw 15vh,
-                rgba(250, 240, 128, 0.5) 5%, rgba(250, 240, 128, 0) 95%);
-            background-attachment: fixed;
-            font-family: Arial, sans-serif;
-        }
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-        /* Testimonials Section */
-        #testimonials {
-            background: rgba(255, 255, 255, 0.1); /* transparent white */
-            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border-radius: 15px;
-            padding: 4rem 1rem;
-            text-align: center;
-            width: 90%;
-            margin: 2rem auto;
-            color: white;
-        }
+/* Contact Section */
+.contact {
+  background: rgba(0, 0, 0, 0.8); /* Black background with opacity */
+  padding: 60px 20px;
+  height: 100vh; /* Ensure full height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-        .section-title {
-            font-size: 2rem;
-            font-weight: bold;
-            margin-bottom: 2rem;
-            color: #fff;
-        }
+.contact-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px); /* Glass effect */
+  color: #fff; /* Make text color white for better contrast */
+}
 
-        .testimonials-container {
-            overflow: auto;
-            display: flex;
-            scroll-snap-type: x mandatory;
-            width: 90%;
-            margin: 0 auto;
-            padding: 0 15px;
-        }
+.contact h1 {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
 
-        .card {
-            background: rgba(255, 255, 255, 0.2);
-            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-            backdrop-filter: blur(7px);
-            -webkit-backdrop-filter: blur(7px);
-            border-radius: 10px;
-            padding: 2rem;
-            margin: 1rem;
-            flex-shrink: 0;
-            scroll-snap-align: center;
-            width: 250px;
-            text-align: center;
-            color: white;
-        }
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
 
-        .title {
-            font-size: 1.1rem;
-            font-style: italic;
-            margin-bottom: 1rem;
-            color: #ddd;
-        }
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
 
-        h4 {
-            font-size: 1rem;
-            font-weight: bold;
-            color: #fff;
-        }
+label {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
 
-        /* Responsive Design */
-        @media (min-width: 768px) {
-            .testimonials-container {
-                gap: 1.5rem;
-            }
-        }
+input,
+textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.2); /* Light transparent background */
+  color: #fff; /* White text for inputs */
+}
+
+input:focus,
+textarea:focus {
+  border-color: #00b0ff;
+  outline: none;
+}
+
+textarea {
+  resize: vertical;
+}
+
+button {
+  background-color: #00b0ff;
+  color: white;
+  border: none;
+  padding: 14px 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0088cc;
+}
+
+button:active {
+  background-color: #006f99;
+}
+
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.checkbox-group input {
+  width: auto;
+}
+
+a {
+  color: #00b0ff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #0088cc;
+}
+
+/* Loader */
+#loader {
+  text-align: center;
+  margin-top: 20px;
+}
+
+#loader img {
+  width: 50px;
+  height: auto;
+}
+
+.success-message {
+  color: #28a745;
+  background: rgba(40, 167, 69, 0.1);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.error-message {
+  color: #dc3545;
+  background: rgba(220, 53, 69, 0.1);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+#response {
+  display: none;
+  margin-top: 20px;
+  font-size: 14px;
+  text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .contact-container {
+    padding: 20px;
+    width: 100%;
+    box-shadow: none;
+  }
+
+  .contact h1 {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+
+  .contact-form {
+    gap: 15px;
+  }
+
+  label {
+    font-size: 14px;
+  }
+
+  input,
+  textarea {
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+
+  button {
+    padding: 12px 16px;
+    font-size: 14px;
+  }
+
+  .checkbox-group {
+    gap: 8px;
+  }
+
+  #loader img {
+    width: 40px;
+  }
+
+  .success-message, 
+  .error-message {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  #response {
+    font-size: 14px;
+    margin-top: 15px;
+  }
+}
     </style>
 </head>
 <body>
