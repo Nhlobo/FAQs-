@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Software Company - Get Your App</title>
+  <title>Software Company - Portfolio</title>
   <style>
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -15,8 +15,9 @@
     .app-store-section {
       display: flex;
       align-items: flex-start;
-      justify-content: space-between;
-      padding: 50px 40px;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 50px 20px;
       background-color: #ffffff;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
       margin: 50px auto;
@@ -33,8 +34,9 @@
     }
 
     .text-section {
-      width: 40%;
-      padding-right: 30px;
+      width: 100%;
+      text-align: center;
+      margin-bottom: 40px;
     }
 
     .text-section p {
@@ -43,21 +45,22 @@
       line-height: 1.6;
     }
 
-    /* Phone frame styling with reduced size for the app */
+    /* Phone frame styling */
     .screen-container {
       position: relative;
-      width: 320px; /* Reduced width */
-      height: 580px; /* Reduced height */
+      width: 380px;
+      height: 670px;
       background-color: #f9f9f9;
       border-radius: 35px;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
       overflow: hidden;
       border: 10px solid #ccc;
+      margin: 20px;
     }
 
     .screen-frame {
       position: absolute;
-      top: 20px;
+      top: 25px;
       left: 20px;
       right: 20px;
       bottom: 20px;
@@ -71,76 +74,31 @@
       width: 100%;
       height: 100%;
       border: none;
-      transform: scale(0.85); /* Scale the app to fit the frame */
-      transform-origin: center center;
     }
 
-    /* App Store Badge Section */
+    /* Store buttons styling */
     .store-buttons {
       display: flex;
       justify-content: center;
       gap: 20px;
-      margin-top: 30px;
-      animation: fadeInOut 6s ease-in-out infinite;
+      margin-top: 40px;
     }
 
     .store-buttons img {
       height: 60px;
       max-width: 200px;
-      opacity: 0;
-      animation: fadeInOut 6s ease-in-out infinite;
     }
 
-    .store-buttons img:nth-child(1) {
-      animation-delay: 0s;
-    }
-
-    .store-buttons img:nth-child(2) {
-      animation-delay: 2s;
-    }
-
-    .store-buttons img:nth-child(3) {
-      animation-delay: 4s;
-    }
-
-    @keyframes fadeInOut {
-      0% { opacity: 0; transform: translateX(-100px); }
-      25% { opacity: 1; transform: translateX(0); }
-      50% { opacity: 0; transform: translateX(100px); }
-      75% { opacity: 1; transform: translateX(0); }
-      100% { opacity: 0; transform: translateX(-100px); }
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      background-color: #333;
-      color: #fff;
-      margin-top: 50px;
-    }
-
-    footer p {
-      font-size: 0.9rem;
-      margin: 0;
-    }
-
-    /* Mobile responsiveness */
+    /* Responsive layout adjustments */
     @media (max-width: 768px) {
       .app-store-section {
         flex-direction: column;
         align-items: center;
       }
 
-      .text-section {
-        width: 100%;
-        padding-right: 0;
-        margin-bottom: 30px;
-      }
-
       .screen-container {
-        width: 100%;
-        height: 400px;
-        margin-top: 30px;
+        width: 80%;
+        height: 500px;
       }
 
       .store-buttons img {
@@ -151,25 +109,35 @@
 </head>
 <body>
   <section class="app-store-section">
-    <!-- Left side: Text paragraph -->
+    <!-- Heading Section -->
     <div class="text-section">
-      <h2>Our Amazing App</h2>
-      <p>
-        Experience the power of our weather app! Check real-time weather updates, forecasts, and more with just a click. Stay ahead of the weather and make informed decisions with ease.
-      </p>
+      <h2>Our Amazing Apps</h2>
+      <p>Explore the power of our apps and experience the best of technology in the palm of your hand. Browse our portfolio and see the future of mobile applications!</p>
     </div>
 
-    <!-- Right side: Screen with web app inside -->
+    <!-- App Screens Section (Three screens) -->
     <div class="screen-container">
       <div class="screen-frame">
-        <!-- Embed your web app here -->
+        <!-- Embed your first web app here -->
         <iframe src="https://weather-ebon-beta.vercel.app/" title="Weather App" allowfullscreen></iframe>
       </div>
     </div>
-  </section>
 
-  <!-- Store buttons at the bottom -->
-  <section>
+    <div class="screen-container">
+      <div class="screen-frame">
+        <!-- Embed your second web app here -->
+        <iframe src="https://your-second-app-url.com" title="Second App" allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <div class="screen-container">
+      <div class="screen-frame">
+        <!-- Embed your third web app here -->
+        <iframe src="https://your-third-app-url.com" title="Third App" allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <!-- App Store Badges Section -->
     <div class="store-buttons">
       <!-- Google Play -->
       <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play Store">
@@ -178,19 +146,17 @@
       <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Apple App Store">
       
       <!-- HUAWEI AppGallery -->
-      <img id="huawei-badge" src="your-uploaded-huawei-badge-link.png" alt="Huawei AppGallery">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/63/Huawei_AppGallery_Logo.svg" alt="Huawei AppGallery">
     </div>
   </section>
 
-  <footer>
-    <p>&copy; 2024 Software Company. All rights reserved.</p>
-  </footer>
-
   <script>
-    // Function to refresh the app (iframe) after 1 minute (60,000ms)
+    // Optional: auto-refresh the apps after a minute (60,000ms)
     setTimeout(function() {
-      const iframe = document.querySelector('iframe');
-      iframe.src = iframe.src; // This will refresh the iframe by reloading its URL
+      const iframes = document.querySelectorAll('iframe');
+      iframes.forEach(function(iframe) {
+        iframe.src = iframe.src; // Reload each iframe
+      });
     }, 60000); // Refresh after 1 minute
   </script>
 </body>
