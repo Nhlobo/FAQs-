@@ -14,7 +14,7 @@
 
     .app-store-section {
       display: flex;
-      align-items: center; /* Center the content vertically */
+      align-items: flex-start; /* Align items at the start (top) */
       justify-content: space-between; /* Space between the store buttons and the screen */
       padding: 50px 40px;
       background-color: #ffffff;
@@ -26,17 +26,60 @@
 
     .app-store-section h2 {
       font-size: 2.5rem;
-      margin-bottom: 30px;
+      margin-bottom: 20px;
       color: #333;
       text-align: center;
-      width: 100%; /* Allow header to take full width */
+      width: 100%;
     }
 
+    /* Text paragraph on the left */
+    .text-section {
+      width: 40%;
+      padding-right: 30px;
+    }
+
+    .text-section p {
+      font-size: 1rem;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    /* Styling for the phone frame on the far right */
+    .screen-container {
+      position: relative;
+      width: 380px;
+      height: 670px;
+      border: 6px solid #ccc;
+      background-color: #f9f9f9;
+      border-radius: 25px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      overflow: hidden;
+    }
+
+    .screen-container .screen-frame {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      right: 20px;
+      bottom: 20px;
+      border: 4px solid rgba(0, 0, 0, 0.2);
+      border-radius: 10px;
+      background-color: white;
+      overflow: hidden;
+    }
+
+    /* Embedding the app inside the screen using an iframe */
+    .screen-container iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* Styling for the app store badges at the bottom */
     .store-buttons {
       display: flex;
       justify-content: center;
       gap: 20px;
-      flex-wrap: wrap;
       margin-top: 30px;
     }
 
@@ -49,37 +92,6 @@
     .store-buttons img:hover {
       transform: scale(1.1);
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    }
-
-    /* Styling for the screen on the far right */
-    .screen-container {
-      position: relative;
-      width: 380px;
-      height: 670px;
-      border: 6px solid #ccc;
-      background-color: #f9f9f9;
-      border-radius: 25px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-      overflow: hidden;
-    }
-
-    .screen-container .screen-image {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    /* Inner screen elements (if necessary) */
-    .screen-container .screen-frame {
-      position: absolute;
-      top: 20px;
-      left: 20px;
-      right: 20px;
-      bottom: 20px;
-      border: 4px solid rgba(0, 0, 0, 0.2);
-      border-radius: 10px;
-      background-color: white;
-      overflow: hidden;
     }
 
     footer {
@@ -102,6 +114,12 @@
         align-items: center;
       }
 
+      .text-section {
+        width: 100%;
+        padding-right: 0;
+        margin-bottom: 30px;
+      }
+
       .screen-container {
         width: 100%;
         height: 400px;
@@ -116,23 +134,31 @@
 </head>
 <body>
   <section class="app-store-section">
-    <div>
-      <h2>Get Your App On</h2>
-      <div class="store-buttons">
-        <!-- Google Play -->
-        <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play Store">
-
-        <!-- Apple App Store -->
-        <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Apple App Store">
-      </div>
+    <!-- Left side: Text paragraph -->
+    <div class="text-section">
+      <h2>Our Amazing App</h2>
+      <p>
+        Experience the power of our weather app! Check real-time weather updates, forecasts, and more with just a click. Stay ahead of the weather and make informed decisions with ease.
+      </p>
     </div>
 
-    <!-- Screen on the far right -->
+    <!-- Right side: Screen with web app inside -->
     <div class="screen-container">
       <div class="screen-frame">
-        <!-- Insert a product image or demo here -->
-        <img class="screen-image" src="https://via.placeholder.com/380x670.png?text=Your+App+Preview" alt="App Preview">
+        <!-- Embed your web app here -->
+        <iframe src="https://weather-ebon-beta.vercel.app/" title="Weather App" allowfullscreen></iframe>
       </div>
+    </div>
+  </section>
+
+  <!-- Store buttons at the bottom -->
+  <section>
+    <div class="store-buttons">
+      <!-- Google Play -->
+      <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play Store">
+      
+      <!-- Apple App Store -->
+      <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Apple App Store">
     </div>
   </section>
 
