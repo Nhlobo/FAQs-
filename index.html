@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Responsive App Previews</title>
+  <title>Our Amazing Apps</title>
   <style>
     /* General Styles */
     body {
@@ -26,42 +26,37 @@
       border-radius: 15px;
     }
 
-    .app-store-section h2 {
+    .text-section h2 {
       font-size: 2rem;
       margin-bottom: 15px;
       color: #333;
       text-align: center;
-      width: 100%;
     }
 
     .text-section p {
       font-size: 0.9rem;
       color: #555;
       line-height: 1.4;
-      padding: 0 10px;
+      text-align: center;
+      padding: 0 20px;
     }
 
-    /* Responsive iPhone-like frame */
     .screen-row {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 20px;
-      margin-bottom: 20px;
+      margin: 20px 0;
     }
 
     .screen-container {
       position: relative;
-      width: 80%;
-      max-width: 350px;
-      aspect-ratio: 9 / 16;
+      width: 300px;
+      height: 600px;
       border: 16px solid black;
       border-radius: 40px;
       background-color: #f9f9f9;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-      display: flex;
-      justify-content: center;
-      align-items: center;
       overflow: hidden;
     }
 
@@ -76,7 +71,54 @@
       width: 100%;
       height: 100%;
       border: none;
-      scroll-behavior: auto;
+    }
+
+    /* Decorative elements */
+    .top-bar,
+    .right-top-corner,
+    .right-bottom-corner,
+    .volume-buttons,
+    .power-button {
+      position: absolute;
+      background-color: #000;
+      border-radius: 3px;
+    }
+
+    .top-bar {
+      top: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 40%;
+      height: 8px;
+    }
+
+    .right-top-corner,
+    .right-bottom-corner {
+      width: 8px;
+      height: 8px;
+      right: -8px;
+    }
+
+    .right-top-corner {
+      top: 10%;
+    }
+
+    .right-bottom-corner {
+      bottom: 10%;
+    }
+
+    .volume-buttons {
+      left: -8px;
+      top: 25%;
+      width: 8px;
+      height: 40%;
+    }
+
+    .power-button {
+      right: -8px;
+      top: 40%;
+      width: 8px;
+      height: 20%;
     }
 
     /* Store badges styling */
@@ -88,27 +130,22 @@
       margin-top: 20px;
     }
 
-    .store-buttons a img {
+    .store-buttons img {
       height: 50px;
       max-width: 150px;
     }
 
-    /* Mobile Adjustments */
     @media (max-width: 768px) {
       .screen-container {
-        width: 90%;
-        max-width: 300px;
+        width: 200px;
+        height: 400px;
       }
 
       .store-buttons img {
         height: 40px;
       }
 
-      .app-store-section {
-        padding: 20px 5px;
-      }
-
-      .app-store-section h2 {
+      .text-section h2 {
         font-size: 1.5rem;
       }
 
@@ -120,41 +157,57 @@
 </head>
 <body>
   <section class="app-store-section">
-    <h2>Explore My Apps</h2>
+    <!-- Heading Section -->
     <div class="text-section">
-      <p>Discover apps designed to enhance your experience, from utilities to interactive tools. Click below to preview them!</p>
+      <h2>Our Amazing Apps</h2>
+      <p>Explore the power of our apps and experience the best of technology in the palm of your hand. Browse our portfolio and see the future of mobile applications!</p>
     </div>
+
+    <!-- App Screens Section -->
     <div class="screen-row">
-      <!-- Example 1: Quran Knowledge Quiz -->
+      <!-- Weather App -->
       <div class="screen-container">
+        <span class="top-bar"></span>
+        <span class="right-top-corner"></span>
+        <span class="right-bottom-corner"></span>
+        <span class="volume-buttons"></span>
+        <span class="power-button"></span>
+        <div class="screen-frame">
+          <iframe src="https://weatherr-8z7v.onrender.com" title="Weather App"></iframe>
+        </div>
+      </div>
+
+      <!-- Quran Knowledge Quiz -->
+      <div class="screen-container">
+        <span class="top-bar"></span>
+        <span class="right-top-corner"></span>
+        <span class="right-bottom-corner"></span>
+        <span class="volume-buttons"></span>
+        <span class="power-button"></span>
         <div class="screen-frame">
           <iframe src="https://nhlobo.github.io/quran-knowledge-quiz/" title="Quran Knowledge Quiz"></iframe>
         </div>
       </div>
-      <!-- Example 2: Calendar App -->
+
+      <!-- Calculator -->
       <div class="screen-container">
+        <span class="top-bar"></span>
+        <span class="right-top-corner"></span>
+        <span class="right-bottom-corner"></span>
+        <span class="volume-buttons"></span>
+        <span class="power-button"></span>
         <div class="screen-frame">
-          <iframe src="https://nhlobo.github.io/calendar/" title="Calendar App"></iframe>
-        </div>
-      </div>
-      <!-- Example 3: Weather App -->
-      <div class="screen-container">
-        <div class="screen-frame">
-          <iframe src="https://weatherr-8z7v.onrender.com" title="Weather Forecast App"></iframe>
+          <iframe src="https://nhlobo.github.io/calculator/" title="Calculator"></iframe>
         </div>
       </div>
     </div>
+
+    <!-- App Store Badges Section -->
     <div class="store-buttons">
-      <a href="https://play.google.com/store" target="_blank" rel="noopener noreferrer">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play Store">
-      </a>
-      <a href="https://apps.apple.com" target="_blank" rel="noopener noreferrer">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Download_on_the_App_Store_Badge.svg" alt="Apple App Store">
-      </a>
-      <a href="https://microsoft.com/store" target="_blank" rel="noopener noreferrer">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/2/26/Get_it_from_Microsoft_Badge.svg" alt="Microsoft Store">
-      </a>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play Store">
+      <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Apple App Store">
+      <img src="huawei.png" alt="Huawei AppGallery">
     </div>
   </section>
 </body>
-            </html>
+  </html>
