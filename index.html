@@ -44,7 +44,7 @@
       line-height: 1.6;
     }
 
-    /* Phone frame styling */
+    /* Phone frame styling (Updated to match your request) */
     .screen-row {
       display: flex;
       justify-content: space-between;
@@ -63,6 +63,38 @@
       display: flex;
       justify-content: center;
       align-items: center;
+    }
+
+    /* Custom decorative spans (Side buttons) */
+    .screen-container .top-bar {
+      position: absolute;
+      width: 80px;
+      height: 6px;
+      border-radius: 10px;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: black;
+    }
+
+    .screen-container .right-top-corner {
+      position: absolute;
+      right: -8px;
+      top: 10px;
+      width: 20px;
+      height: 20px;
+      border-radius: 8px;
+      background-color: black;
+    }
+
+    .screen-container .right-bottom-corner {
+      position: absolute;
+      right: -8px;
+      bottom: 10px;
+      width: 20px;
+      height: 20px;
+      border-radius: 8px;
+      background-color: black;
     }
 
     /* Adjust iframe inside the screen */
@@ -126,6 +158,11 @@
     <!-- App Screens Section (Three screens horizontally aligned) -->
     <div class="screen-row">
       <div class="screen-container">
+        <!-- Decorative elements as per structure -->
+        <span class="top-bar"></span>
+        <span class="right-top-corner"></span>
+        <span class="right-bottom-corner"></span>
+
         <div class="screen-frame">
           <!-- Embed your Weather app -->
           <iframe src="https://weather-ebon-beta.vercel.app/" title="Weather App" allowfullscreen></iframe>
@@ -133,6 +170,11 @@
       </div>
 
       <div class="screen-container">
+        <!-- Decorative elements as per structure -->
+        <span class="top-bar"></span>
+        <span class="right-top-corner"></span>
+        <span class="right-bottom-corner"></span>
+
         <div class="screen-frame">
           <!-- Embed the Quran Knowledge Quiz app -->
           <iframe src="https://quran-knowledge-quiz-2.onrender.com" title="Quran Knowledge Quiz" allowfullscreen></iframe>
@@ -140,6 +182,11 @@
       </div>
 
       <div class="screen-container">
+        <!-- Decorative elements as per structure -->
+        <span class="top-bar"></span>
+        <span class="right-top-corner"></span>
+        <span class="right-bottom-corner"></span>
+
         <div class="screen-frame">
           <!-- Embed the Calculator app -->
           <iframe src="https://calculator-4-qodo.onrender.com" title="Calculator" allowfullscreen></iframe>
