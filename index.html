@@ -65,7 +65,7 @@
       align-items: center;
     }
 
-    /* Custom decorative spans */
+    /* Custom decorative spans (Side buttons) */
     .screen-container span {
       position: absolute;
       background-color: black;
@@ -77,26 +77,30 @@
       width: 80px;
       height: 6px;
       border-radius: 10px;
-      top: 0;
+      top: 10px; /* Adjusted for proper position */
+      left: 50%; /* Center aligned */
+      transform: translateX(-50%);
       background-color: black;
     }
 
     .screen-container .right-top-corner {
       position: absolute;
-      right: -10px;
-      top: 40px;
-      width: 30px;
-      height: 28px;
+      right: -8px; /* Adjusted for better positioning */
+      top: 10px;
+      width: 20px;
+      height: 20px;
       border-radius: 8px;
+      background-color: black;
     }
 
     .screen-container .right-bottom-corner {
       position: absolute;
-      right: -10px;
-      bottom: 40px;
-      width: 30px;
-      height: 40px;
+      right: -8px;
+      bottom: 10px;
+      width: 20px;
+      height: 20px;
       border-radius: 8px;
+      background-color: black;
     }
 
     /* Adjust iframe inside the screen */
@@ -148,27 +152,6 @@
       }
     }
   </style>
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      // Get all iframes
-      const iframes = document.querySelectorAll('.screen-container iframe');
-
-      // Function to refresh iframe when clicked/focused
-      const refreshIframe = (iframe) => {
-        const src = iframe.src;
-        iframe.src = ''; // Temporarily remove the source
-        iframe.src = src; // Set the source again to refresh
-      };
-
-      // Attach focus event listener to each iframe
-      iframes.forEach(iframe => {
-        iframe.addEventListener('focus', () => {
-          // Refresh the iframe when it gains focus (user switches to it)
-          refreshIframe(iframe);
-        });
-      });
-    });
-  </script>
 </head>
 <body>
   <section class="app-store-section">
