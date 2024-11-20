@@ -14,9 +14,8 @@
 
     .app-store-section {
       display: flex;
-      align-items: flex-start;
-      justify-content: center;
-      flex-wrap: wrap;
+      flex-direction: column;
+      align-items: center;
       padding: 50px 20px;
       background-color: #ffffff;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
@@ -46,6 +45,13 @@
     }
 
     /* Phone frame styling */
+    .screen-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      margin-bottom: 40px;
+    }
+
     .screen-container {
       position: relative;
       width: 380px;
@@ -55,7 +61,6 @@
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
       overflow: hidden;
       border: 10px solid #ccc;
-      margin: 20px;
     }
 
     .screen-frame {
@@ -91,9 +96,10 @@
 
     /* Responsive layout adjustments */
     @media (max-width: 768px) {
-      .app-store-section {
+      .screen-row {
         flex-direction: column;
         align-items: center;
+        gap: 20px;
       }
 
       .screen-container {
@@ -115,25 +121,27 @@
       <p>Explore the power of our apps and experience the best of technology in the palm of your hand. Browse our portfolio and see the future of mobile applications!</p>
     </div>
 
-    <!-- App Screens Section (Three screens) -->
-    <div class="screen-container">
-      <div class="screen-frame">
-        <!-- Embed your first web app here -->
-        <iframe src="https://weather-ebon-beta.vercel.app/" title="Weather App" allowfullscreen></iframe>
+    <!-- App Screens Section (Three screens horizontally aligned) -->
+    <div class="screen-row">
+      <div class="screen-container">
+        <div class="screen-frame">
+          <!-- Embed your first web app here -->
+          <iframe src="https://weather-ebon-beta.vercel.app/" title="Weather App" allowfullscreen></iframe>
+        </div>
       </div>
-    </div>
 
-    <div class="screen-container">
-      <div class="screen-frame">
-        <!-- Embed your second web app here -->
-        <iframe src="https://your-second-app-url.com" title="Second App" allowfullscreen></iframe>
+      <div class="screen-container">
+        <div class="screen-frame">
+          <!-- Embed your second web app here -->
+          <iframe src="https://your-second-app-url.com" title="Second App" allowfullscreen></iframe>
+        </div>
       </div>
-    </div>
 
-    <div class="screen-container">
-      <div class="screen-frame">
-        <!-- Embed your third web app here -->
-        <iframe src="https://your-third-app-url.com" title="Third App" allowfullscreen></iframe>
+      <div class="screen-container">
+        <div class="screen-frame">
+          <!-- Embed your third web app here -->
+          <iframe src="https://your-third-app-url.com" title="Third App" allowfullscreen></iframe>
+        </div>
       </div>
     </div>
 
@@ -149,15 +157,5 @@
       <img src="https://upload.wikimedia.org/wikipedia/commons/6/63/Huawei_AppGallery_Logo.svg" alt="Huawei AppGallery">
     </div>
   </section>
-
-  <script>
-    // Optional: auto-refresh the apps after a minute (60,000ms)
-    setTimeout(function() {
-      const iframes = document.querySelectorAll('iframe');
-      iframes.forEach(function(iframe) {
-        iframe.src = iframe.src; // Reload each iframe
-      });
-    }, 60000); // Refresh after 1 minute
-  </script>
 </body>
 </html>
