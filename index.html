@@ -112,6 +112,27 @@
       }
     }
   </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Get all iframes
+      const iframes = document.querySelectorAll('.screen-container iframe');
+
+      // Function to refresh iframe when clicked/focused
+      const refreshIframe = (iframe) => {
+        const src = iframe.src;
+        iframe.src = ''; // Temporarily remove the source
+        iframe.src = src; // Set the source again to refresh
+      };
+
+      // Attach focus event listener to each iframe
+      iframes.forEach(iframe => {
+        iframe.addEventListener('focus', () => {
+          // Refresh the iframe when it gains focus (user switches to it)
+          refreshIframe(iframe);
+        });
+      });
+    });
+  </script>
 </head>
 <body>
   <section class="app-store-section">
