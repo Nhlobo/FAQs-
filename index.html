@@ -6,29 +6,30 @@
   <title>Software Company - Get Your App</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f4f4f4;
+      background-color: #f5f7fb;
     }
 
     .app-store-section {
       display: flex;
       align-items: center; /* Center the content vertically */
       justify-content: space-between; /* Space between the store buttons and the screen */
-      padding: 50px 20px;
+      padding: 50px 40px;
       background-color: #ffffff;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      margin: 50px;
-      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      margin: 50px auto;
+      max-width: 1200px;
+      border-radius: 15px;
     }
 
     .app-store-section h2 {
       font-size: 2.5rem;
       margin-bottom: 30px;
       color: #333;
-      width: 100%; /* Allow header to take full width, with badges and screen beside it */
       text-align: center;
+      width: 100%; /* Allow header to take full width */
     }
 
     .store-buttons {
@@ -36,10 +37,12 @@
       justify-content: center;
       gap: 20px;
       flex-wrap: wrap;
+      margin-top: 30px;
     }
 
     .store-buttons img {
       height: 60px;
+      max-width: 200px;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
@@ -48,46 +51,35 @@
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     }
 
-    /* New styles for the screen on the right */
+    /* Styling for the screen on the far right */
     .screen-container {
       position: relative;
-      width: 160px;
-      height: 300px;
-      border: 4px solid black;
-      background-color: #f5f5f5;
-      border-radius: 20px;
-      box-shadow: 5px 5px 2.5px 6px rgb(209, 218, 218);
+      width: 380px;
+      height: 670px;
+      border: 6px solid #ccc;
+      background-color: #f9f9f9;
+      border-radius: 25px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      overflow: hidden;
     }
 
-    .screen-container span {
-      display: block;
+    .screen-container .screen-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
-    .screen-container .top-bar {
-      border: 2px solid black;
-      background-color: black;
-      width: 80%;
-      height: 6px;
-      margin: 10px auto;
-      border-radius: 0 0 10px 10px;
-    }
-
-    .screen-container .side-bar-top, .screen-container .side-bar-bottom {
+    /* Inner screen elements (if necessary) */
+    .screen-container .screen-frame {
       position: absolute;
-      right: -10px;
-      border: 4px solid black;
-      width: 20px;
+      top: 20px;
+      left: 20px;
+      right: 20px;
+      bottom: 20px;
+      border: 4px solid rgba(0, 0, 0, 0.2);
       border-radius: 10px;
-    }
-
-    .screen-container .side-bar-top {
-      top: 40px;
-      height: 40px;
-    }
-
-    .screen-container .side-bar-bottom {
-      bottom: 40px;
-      height: 50px;
+      background-color: white;
+      overflow: hidden;
     }
 
     footer {
@@ -96,6 +88,29 @@
       background-color: #333;
       color: #fff;
       margin-top: 50px;
+    }
+
+    footer p {
+      font-size: 0.9rem;
+      margin: 0;
+    }
+
+    /* Mobile responsiveness */
+    @media (max-width: 768px) {
+      .app-store-section {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .screen-container {
+        width: 100%;
+        height: 400px;
+        margin-top: 30px;
+      }
+
+      .store-buttons img {
+        height: 50px;
+      }
     }
   </style>
 </head>
@@ -114,9 +129,10 @@
 
     <!-- Screen on the far right -->
     <div class="screen-container">
-      <span class="top-bar"></span>
-      <span class="side-bar-top"></span>
-      <span class="side-bar-bottom"></span>
+      <div class="screen-frame">
+        <!-- Insert a product image or demo here -->
+        <img class="screen-image" src="https://via.placeholder.com/380x670.png?text=Your+App+Preview" alt="App Preview">
+      </div>
     </div>
   </section>
 
