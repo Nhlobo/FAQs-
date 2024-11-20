@@ -27,34 +27,31 @@
       margin-bottom: 20px;
     }
 
-    /* Carousel Wrapper */
-    .carousel {
+    /* The Carousel Container */
+    .carousel-container {
       position: relative;
       width: 360px;
-      height: 700px;
       margin: 0 auto;
-      overflow: hidden;
     }
 
-    .carousel-track {
-      display: flex;
-      transition: transform 0.5s ease-in-out;
-    }
-
-    /* Individual Smartphone */
+    /* The device with borders */
     .smartphone {
       position: relative;
       width: 360px;
       height: 640px;
-      margin: 0 auto;
+      margin: auto;
       border: 16px black solid;
       border-top-width: 60px;
       border-bottom-width: 60px;
       border-radius: 36px;
-      flex-shrink: 0;
+      display: none;
     }
 
-    /* Top horizontal bar on the device */
+    .smartphone.active {
+      display: block;
+    }
+
+    /* The horizontal line on the top of the device */
     .smartphone:before {
       content: '';
       display: block;
@@ -68,7 +65,7 @@
       border-radius: 10px;
     }
 
-    /* Circle button on the bottom of the device */
+    /* The circle on the bottom of the device */
     .smartphone:after {
       content: '';
       display: block;
@@ -82,7 +79,7 @@
       border-radius: 50%;
     }
 
-    /* Screen Content */
+    /* The screen (or content) of the device */
     .smartphone .content {
       width: 100%;
       height: 100%;
@@ -96,30 +93,26 @@
       border: none;
     }
 
-    /* Arrows */
-    .arrow {
+    /* Navigation Arrows */
+    .carousel-arrow {
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      background-color: rgba(0, 0, 0, 0.5);
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      font-size: 1.5rem;
+      font-size: 2rem;
+      color: #333;
       cursor: pointer;
-      border-radius: 50%;
-      z-index: 2;
+      user-select: none;
     }
 
-    .arrow-left {
-      left: -50px;
+    .carousel-arrow.left {
+      left: -40px;
     }
 
-    .arrow-right {
-      right: -50px;
+    .carousel-arrow.right {
+      right: -40px;
     }
 
-    /* App Store Badges Section */
+    /* App Store Badges */
     .store-buttons {
       display: flex;
       justify-content: center;
@@ -137,31 +130,31 @@
   <h2>Our Amazing Apps</h2>
   <p>Explore the power of our apps and experience the best of technology in the palm of your hand. Browse our portfolio and see the future of mobile applications!</p>
 
-  <!-- Carousel Section -->
-  <div class="carousel">
-    <div class="carousel-track">
-      <!-- Weather App -->
-      <div class="smartphone">
-        <div class="content">
-          <iframe src="https://weatherr-8z7v.onrender.com" title="Weather App"></iframe>
-        </div>
-      </div>
-      <!-- Quran Knowledge Quiz -->
-      <div class="smartphone">
-        <div class="content">
-          <iframe src="https://nhlobo.github.io/quran-knowledge-quiz/" title="Quran Knowledge Quiz"></iframe>
-        </div>
-      </div>
-      <!-- Calculator -->
-      <div class="smartphone">
-        <div class="content">
-          <iframe src="https://nhlobo.github.io/calculator/" title="Calculator"></iframe>
-        </div>
+  <div class="carousel-container">
+    <!-- Weather App -->
+    <div class="smartphone active">
+      <div class="content">
+        <iframe src="https://weatherr-8z7v.onrender.com" title="Weather App"></iframe>
       </div>
     </div>
-    <!-- Navigation Arrows -->
-    <button class="arrow arrow-left" onclick="moveSlide(-1)">&lt;</button>
-    <button class="arrow arrow-right" onclick="moveSlide(1)">&gt;</button>
+
+    <!-- Quran Knowledge Quiz -->
+    <div class="smartphone">
+      <div class="content">
+        <iframe src="https://nhlobo.github.io/quran-knowledge-quiz/" title="Quran Knowledge Quiz"></iframe>
+      </div>
+    </div>
+
+    <!-- Calculator -->
+    <div class="smartphone">
+      <div class="content">
+        <iframe src="https://nhlobo.github.io/calculator/" title="Calculator"></iframe>
+      </div>
+    </div>
+
+    <!-- Arrows for Navigation -->
+    <div class="carousel-arrow left" onclick="prevApp()">&#8249;</div>
+    <div class="carousel-arrow right" onclick="nextApp()">&#8250;</div>
   </div>
 
   <!-- App Store Badges Section -->
@@ -172,20 +165,25 @@
   </div>
 
   <script>
-    const track = document.querySelector('.carousel-track');
+    // JavaScript for Carousel Functionality
     const phones = document.querySelectorAll('.smartphone');
     let currentIndex = 0;
 
-    function moveSlide(direction) {
-      currentIndex += direction;
-      if (currentIndex < 0) {
-        currentIndex = phones.length - 1; // Loop to the last item
-      } else if (currentIndex >= phones.length) {
-        currentIndex = 0; // Loop to the first item
-      }
-      const offset = -currentIndex * 360; // Move track to show the current phone
-      track.style.transform = `translateX(${offset}px)`;
+    function showApp(index) {
+      phones.forEach((phone, i) => {
+        phone.classList.toggle('active', i === index);
+      });
+    }
+
+    function prevApp() {
+      currentIndex = (currentIndex - 1 + phones.length) % phones.length;
+      showApp(currentIndex);
+    }
+
+    function nextApp() {
+      currentIndex = (currentIndex + 1) % phones.length;
+      showApp(currentIndex);
     }
   </script>
 </body>
-  </html>
+      </html>
