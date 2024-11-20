@@ -134,21 +134,21 @@
     <!-- Weather App -->
     <div class="smartphone active">
       <div class="content">
-        <iframe src="https://weatherr-8z7v.onrender.com" title="Weather App"></iframe>
+        <iframe src="https://weatherr-8z7v.onrender.com" title="Weather App" id="weatherApp"></iframe>
       </div>
     </div>
 
     <!-- Quran Knowledge Quiz -->
     <div class="smartphone">
       <div class="content">
-        <iframe src="https://nhlobo.github.io/quran-knowledge-quiz/" title="Quran Knowledge Quiz"></iframe>
+        <iframe src="https://nhlobo.github.io/quran-knowledge-quiz/" title="Quran Knowledge Quiz" id="quranQuiz"></iframe>
       </div>
     </div>
 
     <!-- Calculator -->
     <div class="smartphone">
       <div class="content">
-        <iframe src="https://nhlobo.github.io/calculator/" title="Calculator"></iframe>
+        <iframe src="https://nhlobo.github.io/calculator/" title="Calculator" id="calculator"></iframe>
       </div>
     </div>
 
@@ -167,12 +167,27 @@
   <script>
     // JavaScript for Carousel Functionality
     const phones = document.querySelectorAll('.smartphone');
+    const iframes = {
+      0: document.getElementById('weatherApp'),
+      1: document.getElementById('quranQuiz'),
+      2: document.getElementById('calculator'),
+    };
     let currentIndex = 0;
 
     function showApp(index) {
       phones.forEach((phone, i) => {
         phone.classList.toggle('active', i === index);
+        if (i === index) {
+          refreshIframe(i);
+        }
       });
+    }
+
+    function refreshIframe(index) {
+      const iframe = iframes[index];
+      const currentSrc = iframe.src;
+      iframe.src = ''; // Temporarily clear the iframe content
+      iframe.src = currentSrc; // Reassign the original source to reload the iframe
     }
 
     function prevApp() {
@@ -186,4 +201,4 @@
     }
   </script>
 </body>
-      </html>
+  </html>
