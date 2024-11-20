@@ -3,56 +3,59 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Software Company - Portfolio</title>
+  <title>Responsive App Previews</title>
   <style>
+    /* General Styles */
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
       padding: 0;
       background-color: #f5f7fb;
+      box-sizing: border-box;
     }
 
     .app-store-section {
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 50px 20px;
+      padding: 30px 10px; /* Adjusted for smaller screens */
       background-color: #ffffff;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-      margin: 50px auto;
-      max-width: 90%;
+      margin: 30px auto;
+      max-width: 95%; /* Makes section responsive */
       border-radius: 15px;
     }
 
     .app-store-section h2 {
-      font-size: clamp(1.5rem, 2.5vw, 2.5rem);
-      margin-bottom: 20px;
+      font-size: 2rem;
+      margin-bottom: 15px;
       color: #333;
       text-align: center;
-    }
-
-    .text-section {
-      text-align: center;
-      margin-bottom: 40px;
+      width: 100%;
     }
 
     .text-section p {
-      font-size: clamp(0.9rem, 2vw, 1rem);
+      font-size: 0.9rem;
       color: #555;
-      line-height: 1.6;
+      line-height: 1.4;
+      padding: 0 10px;
     }
 
+    /* Responsive iPhone-like frame */
     .screen-row {
       display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 30px;
+      flex-wrap: wrap; /* Stacks items vertically on small screens */
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 20px;
     }
 
     .screen-container {
       position: relative;
-      width: clamp(280px, 30%, 375px);
-      height: clamp(500px, 70%, 667px);
+      width: 80%; /* Dynamic width for all screens */
+      max-width: 350px;
+      height: auto; /* Adjust height automatically */
+      aspect-ratio: 9 / 16; /* Maintains the shape */
       border: 16px solid black;
       border-radius: 40px;
       background-color: #f9f9f9;
@@ -60,116 +63,96 @@
       display: flex;
       justify-content: center;
       align-items: center;
-    }
-
-    .screen-container .top-bar,
-    .screen-container .right-top-corner,
-    .screen-container .right-bottom-corner,
-    .screen-container .volume-buttons,
-    .screen-container .power-button {
-      background-color: black;
-      position: absolute;
-    }
-
-    .screen-container .top-bar {
-      width: 60px;
-      height: 8px;
-      top: 10px;
-      left: 50%;
-      transform: translateX(-50%);
-      border-radius: 4px;
+      overflow: hidden; /* Ensures elements inside fit properly */
     }
 
     .screen-frame {
-      position: absolute;
-      top: 30px;
-      left: 20px;
-      right: 20px;
-      bottom: 20px;
-      background-color: white;
+      width: 100%;
+      height: 100%;
       border-radius: 12px;
       overflow: hidden;
     }
 
     .screen-container iframe {
-      width: 100%;
+      width: 100%; /* Ensures iframe fits the container */
       height: 100%;
       border: none;
+      scroll-behavior: auto; /* Allow scrolling for larger content */
     }
 
+    /* Store buttons styling */
     .store-buttons {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 20px;
-      margin-top: 40px;
+      gap: 15px;
+      margin-top: 20px;
     }
 
     .store-buttons img {
-      height: auto;
+      height: 50px; /* Scales the buttons for mobile */
       max-width: 150px;
     }
 
-    /* Responsive layout */
+    /* Mobile Adjustments */
     @media (max-width: 768px) {
-      .app-store-section {
-        padding: 30px 10px;
-      }
-
-      .screen-row {
-        flex-direction: column;
-        gap: 20px;
+      .screen-container {
+        width: 90%; /* Occupies full width on small screens */
+        max-width: 300px;
       }
 
       .store-buttons img {
-        max-width: 100px;
+        height: 40px; /* Reduce size further for smaller screens */
       }
-    }
 
-    @media (max-width: 480px) {
+      .app-store-section {
+        padding: 20px 5px; /* Reduce padding for mobile */
+      }
+
+      .app-store-section h2 {
+        font-size: 1.5rem; /* Adjust heading size */
+      }
+
       .text-section p {
-        font-size: 0.9rem;
-      }
-
-      .screen-container {
-        width: 90%;
-        height: 500px;
+        font-size: 0.8rem; /* Smaller text for mobile readability */
       }
     }
   </style>
 </head>
 <body>
   <section class="app-store-section">
+    <h2>Explore My Apps</h2>
     <div class="text-section">
-      <h2>Our Amazing Apps</h2>
-      <p>Explore the power of our apps and experience the best of technology in the palm of your hand. Browse our portfolio and see the future of mobile applications!</p>
+      <p>Discover apps designed to enhance your experience, from utilities to interactive tools. Click below to preview them!</p>
     </div>
-
     <div class="screen-row">
+      <!-- Example 1: App Preview -->
       <div class="screen-container">
         <div class="screen-frame">
-          <iframe src="https://weather-ebon-beta.vercel.app/" title="Weather App"></iframe>
+          <iframe src="https://nhlobo.github.io/quran-knowledge-quiz/" title="Quran Knowledge Quiz"></iframe>
         </div>
       </div>
-
+      <!-- Example 2: App Preview -->
       <div class="screen-container">
         <div class="screen-frame">
-          <iframe src="https://quran-knowledge-quiz-2.onrender.com" title="Quran Knowledge Quiz"></iframe>
+          <iframe src="https://nhlobo.github.io/calendar/" title="Calendar App"></iframe>
         </div>
       </div>
-
+      <!-- Example 3: App Preview -->
       <div class="screen-container">
         <div class="screen-frame">
-          <iframe src="https://calculator-4-qodo.onrender.com" title="Calculator"></iframe>
+          <iframe src="https://nhlobo.github.io/calculator/" title="Calculator App"></iframe>
         </div>
       </div>
     </div>
-
     <div class="store-buttons">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play Store">
-      <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Apple App Store">
-      <img src="huawei.png" alt="Huawei AppGallery">
+      <a href="https://play.google.com/store" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play Store">
+      </a>
+      <a href="https://www.apple.com/app-store/" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Download_on_the_App_Store_Badge.svg" alt="Apple App Store">
+      </a>
     </div>
   </section>
 </body>
-          </html>
+</html>
