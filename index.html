@@ -123,24 +123,24 @@
 
     <!-- App Screens Section (Three screens horizontally aligned) -->
     <div class="screen-row">
-      <div class="screen-container" id="weather-container">
+      <div class="screen-container">
         <div class="screen-frame">
           <!-- Embed your Weather app -->
-          <iframe id="weather-iframe" src="https://weather-ebon-beta.vercel.app/" title="Weather App" allowfullscreen></iframe>
+          <iframe src="https://weather-ebon-beta.vercel.app/" title="Weather App" allowfullscreen></iframe>
         </div>
       </div>
 
-      <div class="screen-container" id="quran-container">
+      <div class="screen-container">
         <div class="screen-frame">
           <!-- Embed the Quran Knowledge Quiz app with a fallback link -->
-          <button id="quran-btn">Open Quran Knowledge Quiz</button>
+          <button onclick="window.open('https://quran-knowledge-quiz-2.onrender.com', '_blank')">Open Quran Knowledge Quiz</button>
         </div>
       </div>
 
-      <div class="screen-container" id="calculator-container">
+      <div class="screen-container">
         <div class="screen-frame">
           <!-- Embed the Calculator app -->
-          <iframe id="calculator-iframe" src="https://calculator-4-qodo.onrender.com" title="Calculator" allowfullscreen></iframe>
+          <iframe src="https://calculator-4-qodo.onrender.com" title="Calculator" allowfullscreen></iframe>
         </div>
       </div>
     </div>
@@ -157,50 +157,5 @@
       <img src="https://upload.wikimedia.org/wikipedia/commons/6/63/Huawei_AppGallery_Logo.svg" alt="Huawei AppGallery">
     </div>
   </section>
-
-  <script>
-    // Store references to the iframes and buttons
-    const weatherIframe = document.getElementById('weather-iframe');
-    const calculatorIframe = document.getElementById('calculator-iframe');
-    const quranBtn = document.getElementById('quran-btn');
-
-    const weatherContainer = document.getElementById('weather-container');
-    const quranContainer = document.getElementById('quran-container');
-    const calculatorContainer = document.getElementById('calculator-container');
-
-    // Keep track of the current active iframe
-    let activeIframe = null;
-
-    // Function to refresh the iframe
-    function refreshIframe(iframe) {
-      iframe.src = iframe.src;
-    }
-
-    // Function to handle app switching
-    function switchApp(newApp) {
-      // Refresh the previous iframe if it's not the current one
-      if (activeIframe && activeIframe !== newApp) {
-        refreshIframe(activeIframe);
-      }
-      
-      // Set the new active iframe
-      activeIframe = newApp;
-    }
-
-    // Open Quran app in a new tab
-    quranBtn.addEventListener('click', function() {
-      window.open('https://quran-knowledge-quiz-2.onrender.com', '_blank');
-      switchApp(null); // No iframe for Quran, so just reset active
-    });
-
-    // Track clicks on each app to refresh the previously active one
-    weatherContainer.addEventListener('click', function() {
-      switchApp(weatherIframe);
-    });
-
-    calculatorContainer.addEventListener('click', function() {
-      switchApp(calculatorIframe);
-    });
-  </script>
 </body>
 </html>
