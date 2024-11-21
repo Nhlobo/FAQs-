@@ -180,15 +180,13 @@
     function showApp(index) {
       phones.forEach((phone, i) => {
         phone.classList.remove('active');
-        phone.style.opacity = 0; // Start fading out
+        if (i === index) {
+          setTimeout(() => {
+            phone.classList.add('active');
+          }, 10);  // Ensure there's a small delay for smooth transition
+          refreshIframe(i);
+        }
       });
-
-      // Give a slight delay before adding the active class to the next phone
-      setTimeout(() => {
-        phones[index].classList.add('active');
-        phones[index].style.opacity = 1; // Fade in the selected phone
-        refreshIframe(index);
-      }, 500); // 500ms delay for smooth transition
     }
 
     function refreshIframe(index) {
@@ -209,4 +207,4 @@
     }
   </script>
 </body>
-          </html>
+      </html>
