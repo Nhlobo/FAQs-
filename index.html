@@ -125,34 +125,23 @@
       max-width: 150px;
     }
 
-    /* Responsive Design for Smaller Screens */
-    @media screen and (max-width: 480px) {
-      h2 {
-        font-size: 1.5rem; /* Reduce heading size */
-      }
-
-      p {
-        font-size: 0.9rem; /* Reduce paragraph size */
-      }
-
+    /* Media Query for Small Screens */
+    @media (max-width: 480px) {
       .carousel-container {
-        width: 280px; /* Make the carousel smaller */
+        width: 90%; /* Reduce the container width slightly */
       }
 
       .smartphone {
-        width: 280px; /* Make the smartphone smaller */
-        height: 500px; /* Adjust height accordingly */
+        width: 320px; /* Reduce the smartphone size */
+        height: 560px; /* Adjust height slightly */
       }
 
-      .carousel-arrow {
-        font-size: 1.5rem; /* Reduce arrow size */
-        left: -30px;
-        right: -30px;
+      h2 {
+        font-size: 1.5rem; /* Reduce the heading size */
       }
 
-      .store-buttons img {
-        height: 40px; /* Smaller app store badges */
-        max-width: 120px;
+      p {
+        font-size: 0.9rem; /* Reduce the paragraph text size */
       }
     }
   </style>
@@ -232,4 +221,4 @@
     }
   </script>
 </body>
-          </html>
+  </html>
