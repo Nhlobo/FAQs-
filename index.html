@@ -12,6 +12,7 @@
       padding: 20px;
       background-color: #f5f7fb;
       text-align: center;
+      overflow: hidden;
     }
 
     h2 {
@@ -40,15 +41,32 @@
       width: 360px;
       height: 640px;
       margin: auto;
-      border: 16px black solid;
+      border: 16px solid #333;
       border-top-width: 60px;
       border-bottom-width: 60px;
       border-radius: 36px;
       display: none;
+      animation: phoneSlideIn 1.5s ease-out forwards;
     }
 
     .smartphone.active {
       display: block;
+    }
+
+    /* Phone slide-in animation */
+    @keyframes phoneSlideIn {
+      0% {
+        transform: translateX(100vw);
+        opacity: 0;
+      }
+      50% {
+        transform: translateX(-20vw);
+        opacity: 0.8;
+      }
+      100% {
+        transform: translateX(0);
+        opacity: 1;
+      }
     }
 
     /* The horizontal line on the top of the device */
@@ -85,12 +103,47 @@
       height: 100%;
       background: white;
       overflow: hidden;
+      position: relative;
     }
 
     .smartphone .content iframe {
       width: 100%;
       height: 100%;
       border: none;
+    }
+
+    /* The App Bouncing Animation */
+    .content iframe {
+      opacity: 0;
+      animation: bounceIn 1s ease-out forwards;
+    }
+
+    @keyframes bounceIn {
+      0% {
+        transform: scale(0.5);
+        opacity: 0;
+      }
+      50% {
+        transform: scale(1.1);
+        opacity: 1;
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    /* Glowing Effect on the Phone */
+    .smartphone.active:before {
+      animation: glowEffect 2s infinite alternate;
+    }
+
+    @keyframes glowEffect {
+      0% {
+        box-shadow: 0 0 20px rgba(0, 150, 255, 0.7);
+      }
+      100% {
+        box-shadow: 0 0 40px rgba(0, 150, 255, 1);
+      }
     }
 
     /* The centered "Next" Button */
@@ -104,11 +157,27 @@
       border: 1px solid #87CEEB; /* Light Sky Blue */
       padding: 10px 20px;
       margin-top: 20px;
+      animation: buttonZoomIn 1s ease-out forwards;
     }
 
     .next-button > svg {
       margin-left: 5px;
       transition: all 0.4s ease-in;
+    }
+
+    @keyframes buttonZoomIn {
+      0% {
+        transform: scale(0);
+        opacity: 0;
+      }
+      50% {
+        transform: scale(1.1);
+        opacity: 0.8;
+      }
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
     }
 
     .next-button:hover > svg {
@@ -127,11 +196,22 @@
       justify-content: center;
       gap: 15px;
       margin-top: 20px;
+      opacity: 0;
+      animation: fadeInBadges 1s ease-out 1.5s forwards;
     }
 
     .store-buttons img {
-      height: 37px;
-      max-width: 137px;
+      height: 40px;
+      max-width: 130px;
+    }
+
+    @keyframes fadeInBadges {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
     }
   </style>
 </head>
@@ -185,28 +265,26 @@
       1: document.getElementById('quranQuiz'),
       2: document.getElementById('calculator'),
     };
+
     let currentIndex = 0;
 
-    function showApp(index) {
-      phones.forEach((phone, i) => {
-        phone.classList.toggle('active', i === index);
-        if (i === index) {
-          refreshIframe(i);
-        }
-      });
-    }
-
-    function refreshIframe(index) {
-      const iframe = iframes[index];
-      const currentSrc = iframe.src;
-      iframe.src = ''; // Temporarily clear the iframe content
-      iframe.src = currentSrc; // Reassign the original source to reload the iframe
-    }
-
     function nextApp() {
+      // Hide the current phone (app)
+      phones[currentIndex].classList.remove('active');
+
+      // Move to the next app
       currentIndex = (currentIndex + 1) % phones.length;
-      showApp(currentIndex);
+
+      // Show the next phone (app)
+      phones[currentIndex].classList.add('active');
     }
+
+    // Set a delay to show the app store badges after the animation starts
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        document.querySelector('.store-buttons').style.opacity = 1;
+      }, 3000); // App store badges appear after 3 seconds
+    });
   </script>
 </body>
-  </html>
+</html>
