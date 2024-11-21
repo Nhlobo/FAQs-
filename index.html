@@ -44,14 +44,7 @@
       border-top-width: 60px;
       border-bottom-width: 60px;
       border-radius: 36px;
-      display: none;
-      opacity: 0;
-      transition: opacity 0.5s ease-in-out;
-    }
-
-    .smartphone.active {
       display: block;
-      opacity: 1;
     }
 
     /* The horizontal line on the top of the device */
@@ -88,12 +81,8 @@
       height: 100%;
       background: white;
       overflow: hidden;
-    }
-
-    .smartphone .content iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
+      opacity: 1;
+      transition: opacity 0.5s ease-in-out;
     }
 
     /* Navigation Arrows */
@@ -135,7 +124,7 @@
 
   <div class="carousel-container">
     <!-- Weather App -->
-    <div class="smartphone active">
+    <div class="smartphone">
       <div class="content">
         <iframe src="https://weatherr-8z7v.onrender.com" title="Weather App" id="weatherApp"></iframe>
       </div>
@@ -179,12 +168,13 @@
 
     function showApp(index) {
       phones.forEach((phone, i) => {
-        phone.classList.remove('active');
+        const content = phone.querySelector('.content');
         if (i === index) {
+          content.style.opacity = 0; // Fade out the current app's content
           setTimeout(() => {
-            phone.classList.add('active');
-          }, 10);  // Ensure there's a small delay for smooth transition
-          refreshIframe(i);
+            content.style.opacity = 1; // Fade in the new content
+            refreshIframe(i); // Refresh the iframe content
+          }, 500); // Delay to allow the fade-out to complete
         }
       });
     }
@@ -205,6 +195,9 @@
       currentIndex = (currentIndex + 1) % phones.length;
       showApp(currentIndex);
     }
+
+    // Initial display
+    showApp(currentIndex);
   </script>
 </body>
-      </html>
+  </html>
