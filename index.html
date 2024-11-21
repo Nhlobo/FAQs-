@@ -36,7 +36,7 @@
 
     /* The device with borders */
     .smartphone {
-      position: absolute;
+      position: relative;
       width: 360px;
       height: 640px;
       margin: auto;
@@ -180,11 +180,15 @@
     function showApp(index) {
       phones.forEach((phone, i) => {
         phone.classList.remove('active');
-        if (i === index) {
-          refreshIframe(i);
-          phone.classList.add('active');
-        }
+        phone.style.opacity = 0; // Start fading out
       });
+
+      // Give a slight delay before adding the active class to the next phone
+      setTimeout(() => {
+        phones[index].classList.add('active');
+        phones[index].style.opacity = 1; // Fade in the selected phone
+        refreshIframe(index);
+      }, 500); // 500ms delay for smooth transition
     }
 
     function refreshIframe(index) {
