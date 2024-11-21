@@ -124,6 +124,63 @@
       height: 50px;
       max-width: 150px;
     }
+
+    /* Media Queries for responsiveness */
+    @media screen and (max-width: 767px) {
+      .carousel-container {
+        width: 90%;
+      }
+
+      .smartphone {
+        width: 300px;  /* Reduce the smartphone width for smaller screens */
+        height: 530px; /* Adjust the height accordingly */
+      }
+
+      h2 {
+        font-size: 1.6rem;
+      }
+
+      p {
+        font-size: 0.9rem;
+      }
+
+      .carousel-arrow {
+        font-size: 1.5rem;
+      }
+
+      .store-buttons img {
+        height: 40px;
+        max-width: 120px;
+      }
+    }
+
+    @media screen and (max-width: 480px) {
+      .carousel-container {
+        width: 100%;
+      }
+
+      .smartphone {
+        width: 270px; /* Further reduce width on very small screens */
+        height: 480px; /* Adjust height as well */
+      }
+
+      h2 {
+        font-size: 1.4rem;
+      }
+
+      p {
+        font-size: 0.8rem;
+      }
+
+      .carousel-arrow {
+        font-size: 1.3rem;
+      }
+
+      .store-buttons img {
+        height: 35px;
+        max-width: 100px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -201,4 +258,4 @@
     }
   </script>
 </body>
-          </html>
+  </html>
