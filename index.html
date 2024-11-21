@@ -101,7 +101,7 @@
       cursor: pointer;
       transition: all 0.3s linear;
       border-radius: 10px;
-      border: 1px solid #F2BED1;
+      border: 1px solid #87CEEB; /* Light Sky Blue */
       padding: 10px 20px;
       margin-top: 20px;
     }
@@ -130,28 +130,8 @@
     }
 
     .store-buttons img {
-      height: 40px; /* Reduced height */
-      max-width: 120px; /* Adjust width proportionally */
-    }
-
-    /* Media Query for Small Screens */
-    @media (max-width: 480px) {
-      .carousel-container {
-        width: 90%; /* Reduce the container width slightly */
-      }
-
-      .smartphone {
-        width: 320px; /* Reduce the smartphone size */
-        height: 560px; /* Adjust height slightly */
-      }
-
-      h2 {
-        font-size: 1.5rem; /* Reduce the heading size */
-      }
-
-      p {
-        font-size: 0.9rem; /* Reduce the paragraph text size */
-      }
+      height: 50px;
+      max-width: 150px;
     }
   </style>
 </head>
@@ -182,7 +162,7 @@
     </div>
   </div>
 
-  <!-- "Next" Button -->
+  <!-- Next Button Below the Phones -->
   <div class="next-button" onclick="nextApp()">
     <span>Next</span>
     <svg width="15" height="15" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -229,4 +209,4 @@
     }
   </script>
 </body>
- </html>
+      </html>
