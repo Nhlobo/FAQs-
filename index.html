@@ -93,23 +93,32 @@
       border: none;
     }
 
-    /* Navigation Arrows */
-    .carousel-arrow {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      font-size: 2rem;
-      color: #333;
+    /* The centered "Next" Button */
+    .next-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
       cursor: pointer;
-      user-select: none;
+      transition: all 0.3s linear;
+      border-radius: 10px;
+      border: 1px solid #F2BED1;
+      padding: 10px 20px;
+      margin-top: 20px;
     }
 
-    .carousel-arrow.left {
-      left: -40px;
+    .next-button > svg {
+      margin-left: 5px;
+      transition: all 0.4s ease-in;
     }
 
-    .carousel-arrow.right {
-      right: -40px;
+    .next-button:hover > svg {
+      font-size: 1.2em;
+      transform: translateX(6px);
+    }
+
+    .next-button:hover {
+      box-shadow: 10px 10px 40px #d1d1d1;
+      transform: translateY(-5px);
     }
 
     /* App Store Badges */
@@ -171,10 +180,14 @@
         <iframe src="https://nhlobo.github.io/calculator/" title="Calculator" id="calculator"></iframe>
       </div>
     </div>
+  </div>
 
-    <!-- Arrows for Navigation -->
-    <div class="carousel-arrow left" onclick="prevApp()">&#8249;</div>
-    <div class="carousel-arrow right" onclick="nextApp()">&#8250;</div>
+  <!-- "Next" Button -->
+  <div class="next-button" onclick="nextApp()">
+    <span>Next</span>
+    <svg width="15" height="15" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" stroke-linejoin="round" stroke-linecap="round"></path>
+    </svg>
   </div>
 
   <!-- App Store Badges Section -->
@@ -210,15 +223,10 @@
       iframe.src = currentSrc; // Reassign the original source to reload the iframe
     }
 
-    function prevApp() {
-      currentIndex = (currentIndex - 1 + phones.length) % phones.length;
-      showApp(currentIndex);
-    }
-
     function nextApp() {
       currentIndex = (currentIndex + 1) % phones.length;
       showApp(currentIndex);
     }
   </script>
 </body>
-          </html>
+ </html>
