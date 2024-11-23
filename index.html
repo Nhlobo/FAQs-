@@ -3,274 +3,387 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Our Amazing Apps</title>
-<style>
-  /* General Styles */
-  body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-    padding: 20px;
-    background-color: #f5f7fb;
-    text-align: center;
-  }
-
-  h2 {
-    font-size: 2rem;
-    margin-bottom: 15px;
-    color: #333;
-  }
-
-  p {
-    font-size: 1rem;
-    color: #555;
-    line-height: 1.4;
-    margin-bottom: 20px;
-  }
-
-  /* The Carousel Container */
-  .carousel-container {
-    position: relative;
-    width: 360px;
-    margin: 0 auto;
-  }
-
-  /* The device with borders */
-  .smartphone {
-    position: relative;
-    width: 360px;
-    height: 640px;
-    margin: auto;
-    border: 16px black solid;
-    border-top-width: 60px;
-    border-bottom-width: 60px;
-    border-radius: 36px;
-    display: none;
-    animation: slideIn 1s ease-out forwards;
-  }
-
-  .smartphone.active {
-    display: block;
-    animation: bounceIn 1s ease-out forwards;
-  }
-
-  /* Phone slide-in animation */
-  @keyframes slideIn {
-    0% {
-      transform: translateX(100%);
+  <title>FAQ Section with Chatbot Tomie</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+      overflow: hidden;
     }
-    100% {
-      transform: translateX(0);
+
+    /* General FAQ Section Styles */
+    .faq-section {
+      max-width: 800px;
+      margin: 20px;
+      padding: 20px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
     }
-  }
 
-  /* Phone bounce-in animation */
-  @keyframes bounceIn {
-    0% {
-      transform: translateY(-20px);
+    .section-title {
+      font-size: 1.6rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+      color: #333;
+      text-transform: uppercase;
     }
-    50% {
-      transform: translateY(10px);
+
+    /* FAQ Item Styles */
+    .faq-container {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
     }
-    100% {
-      transform: translateY(0);
+
+    .faq-item {
+      background: #fff;
+      border-radius: 8px;
+      padding: 16px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      border: 1px solid #ddd;
+      cursor: pointer;
+      position: relative;
     }
-  }
 
-  /* The glowing outline around the phone */
-  .smartphone.active {
-    animation: glowOutline 2s infinite alternate;
-  }
-
-  @keyframes glowOutline {
-    0% {
-      box-shadow: 0 0 10px rgba(0, 153, 255, 0.8);
+    .faq-item:hover {
+      box-shadow: 0 0 15px rgba(0, 188, 212, 0.8);
     }
-    100% {
-      box-shadow: 0 0 20px rgba(0, 153, 255, 1);
+
+    .faq-item h3 {
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: #333;
+      text-align: left;
+      margin: 0;
+      padding-left: 15px;
+      cursor: pointer;
+      position: relative;
     }
-  }
 
-  /* The horizontal line on the top of the device */
-  .smartphone:before {
-    content: '';
-    display: block;
-    width: 60px;
-    height: 5px;
-    position: absolute;
-    top: -30px;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: #333;
-    border-radius: 10px;
-  }
-
-  /* The circle on the bottom of the device */
-  .smartphone:after {
-    content: '';
-    display: block;
-    width: 35px;
-    height: 35px;
-    position: absolute;
-    left: 50%;
-    bottom: -65px;
-    transform: translate(-50%, -50%);
-    background: #333;
-    border-radius: 50%;
-  }
-
-  /* The screen (or content) of the device */
-  .smartphone .content {
-    width: 100%;
-    height: 100%;
-    background: white;
-    overflow: hidden;
-  }
-
-  .smartphone .content iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
-    animation: appFall 1s ease-in-out forwards;
-  }
-
-  /* 3D app rotation effect */
-  @keyframes appFall {
-    0% {
-      transform: rotateX(45deg) scale(0.5);
+    .faq-item p {
+      margin: 10px 0;
+      font-size: 1rem;
+      color: #555;
+      display: none;
+      text-align: left;
+      padding-left: 15px;
     }
-    100% {
-      transform: rotateX(0deg) scale(1);
-    }
-  }
 
-  /* The centered "Next" Button */
-  .next-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: all 0.3s linear;
-    border-radius: 10px;
-    border: 1px solid #87CEEB; /* Light Sky Blue */
-    padding: 10px 20px;
-    margin-top: 20px;
-    animation: zoomInBounce 0.5s ease-in-out;
-  }
-
-  /* "Next" button animation (zoom and bounce) */
-  @keyframes zoomInBounce {
-    0% {
-      transform: scale(0);
+    .faq-item.active p {
+      display: block;
+      color: #333;
     }
-    50% {
+
+    .arrow {
+      position: absolute;
+      right: 15px;
+      top: 15px;
+      width: 12px;
+      height: 12px;
+      border-top: 2px solid #333;
+      border-right: 2px solid #333;
+      transform: rotate(45deg);
+      transition: transform 0.3s ease;
+    }
+
+    .arrow.rotate {
+      transform: rotate(-135deg);
+    }
+
+    /* Chat button */
+    .chat-button {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background-color: #87ceeb; /* Light Sky Blue */
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 70px;
+      height: 70px;
+      font-size: 36px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      z-index: 9999;
+    }
+
+    .chat-button:hover {
       transform: scale(1.1);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     }
-    100% {
-      transform: scale(1);
+
+    /* Chat Popup (White background, FAQ color for buttons) */
+    .chat-popup {
+      position: fixed;
+      bottom: 100px;
+      right: 30px;
+      width: 350px;
+      background: white; /* Clean White */
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+      display: none;
+      flex-direction: column;
+      gap: 15px;
+      max-height: 400px;
+      overflow-y: auto;
     }
-  }
 
-  .next-button > svg {
-    margin-left: 5px;
-    transition: all 0.4s ease-in;
-  }
+    .chat-popup.active {
+      display: flex;
+    }
 
-  .next-button:hover > svg {
-    font-size: 1.2em;
-    transform: translateX(6px);
-  }
+    .message {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
 
-  .next-button:hover {
-    box-shadow: 10px 10px 40px #d1d1d1;
-    transform: translateY(-5px);
-  }
+    /* User message styles */
+    .message.user-message {
+      justify-content: flex-end;
+    }
 
-  /* App Store Badges */
-  .store-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-top: 20px;
-  }
+    .message .avatar {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      overflow: hidden;
+      object-fit: cover;
+    }
 
-  .store-buttons img {
-    height: 50px;
-    max-width: 150px;
-  }
+    .message .avatar-img {
+      width: 100%;
+      height: 100%;
+    }
+
+    .message .message-text {
+      background: white; /* White background for conversation */
+      color: black; /* Black text */
+      padding: 10px 15px;
+      border-radius: 20px;
+      font-size: 14px;
+      max-width: 220px;
+      word-wrap: break-word;
+      border: 1px solid #ddd;
+    }
+
+    .message.bot-message .message-text {
+      background: white; /* White background for bot messages */
+      color: black; /* Black text */
+      border-color: #ccc;
+    }
+
+    .message.user-message .message-text {
+      background: white; /* White background for user messages */
+      color: black; /* Black text */
+      border-color: #ccc;
+    }
+
+    /* Input area */
+    .chat-popup input[type="text"] {
+      width: 100%;
+      padding: 12px 15px;
+      border: 1px solid #ddd;
+      border-radius: 25px;
+      font-size: 16px;
+      margin-top: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .chat-popup input[type="text"]:focus {
+      outline: none;
+      border-color: #3498db;
+    }
+
+    .chat-popup button {
+      background: #87ceeb; /* Light Sky Blue */
+      color: white;
+      border: none;
+      border-radius: 25px;
+      padding: 12px;
+      width: 100%;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .chat-popup button:hover {
+      background: #2980b9;
+      transform: scale(1.05);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Close Chat Button */
+    .close-chat-button {
+      position: absolute;
+      top: -50px;
+      right: 10px;
+      background-color: #87ceeb;
+      color: #fff;
+      border: none;
+      border-radius: 20px;
+      padding: 8px 15px;
+      font-size: 12px;
+      cursor: pointer;
+      display: none;
+    }
+
+    .close-chat-button.active {
+      display: inline-block;
+    }
+
+    /* Small cross below the chat button */
+    .chat-button .cross {
+      position: absolute;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 20px;
+      color: #fff;
+      display: none;
+    }
+
+    .chat-button.active .cross {
+      display: block;
+    }
+
+    @media (max-width: 600px) {
+      .chat-popup {
+        width: 280px;
+      }
+
+      .chat-button {
+        width: 60px;
+        height: 60px;
+        font-size: 32px;
+      }
+    }
   </style>
 </head>
 <body>
-  <h2>Our Amazing Apps</h2>
-  <p>Explore the power of our apps and experience the best of technology in the palm of your hand. Browse our portfolio and see the future of mobile applications!</p>
-
-  <div class="carousel-container">
-    <!-- Weather App -->
-    <div class="smartphone active">
-      <div class="content">
-        <iframe src="https://weatherr-8z7v.onrender.com" title="Weather App" id="weatherApp"></iframe>
+  <!-- FAQ Section -->
+  <section id="faq" class="faq-section">
+    <h2 class="section-title">Frequently Asked Questions</h2>
+    <div class="faq-container">
+      <div class="faq-item">
+        <h3>What services do you offer?</h3>
+        <p>We offer web development, mobile app development, maintenance & support, and consulting services to help your business thrive.</p>
+        <div class="arrow"></div>
+      </div>
+      <div class="faq-item">
+        <h3>How much do your services cost?</h3>
+        <p>Our pricing is competitive and tailored to meet the needs of businesses in South Africa. Please visit our pricing page for more details.</p>
+        <div class="arrow"></div>
       </div>
     </div>
+  </section>
 
-    <!-- Quran Knowledge Quiz -->
-    <div class="smartphone">
-      <div class="content">
-        <iframe src="https://nhlobo.github.io/quran-knowledge-quiz/" title="Quran Knowledge Quiz" id="quranQuiz"></iframe>
+  <!-- Chat Button with cross below it -->
+  <button class="chat-button" onclick="toggleChatPopup()">
+    💬
+    <span class="cross">✖</span>
+  </button>
+
+  <!-- Chat Popup -->
+  <div class="chat-popup" id="chatPopup">
+    <div class="message bot-message">
+      <div class="avatar">
+        <img src="tomie-avatar.png" alt="Tomie" class="avatar-img">
       </div>
+      <div class="message-text">Hi! I’m Tomie! Do you have a question too?</div>
     </div>
-
-    <!-- Calculator -->
-    <div class="smartphone">
-      <div class="content">
-        <iframe src="https://nhlobo.github.io/calculator/" title="Calculator" id="calculator"></iframe>
-      </div>
-    </div>
-  </div>
-
-  <!-- Next Button Below the Phones -->
-  <div class="next-button" onclick="nextApp()">
-    <span>Next</span>
-    <svg width="15" height="15" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" stroke-linejoin="round" stroke-linecap="round"></path>
-    </svg>
-  </div>
-
-  <!-- App Store Badges Section -->
-  <div class="store-buttons">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play Store">
-    <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Apple App Store">
-    <img src="huawei.png" alt="Huawei AppGallery">
+    <input type="text" id="userMessage" placeholder="Type your question..." maxlength="200">
+    <button onclick="sendMessage()">Send</button>
+    <button id="closeChatButton" class="close-chat-button" onclick="closeChat()">Close Chat</button>
   </div>
 
   <script>
-    // JavaScript for Carousel Functionality
-    const phones = document.querySelectorAll('.smartphone');
-    const iframes = {
-      0: document.getElementById('weatherApp'),
-      1: document.getElementById('quranQuiz'),
-      2: document.getElementById('calculator'),
+    const chatButton = document.querySelector('.chat-button');
+    const chatPopup = document.getElementById('chatPopup');
+    const closeChatButton = document.getElementById('closeChatButton');
+    const crossIcon = document.querySelector('.chat-button .cross');
+    let faqData = {
+      "What services do you offer?": "We offer web development, mobile app development, maintenance & support, and consulting services.",
+      "How much do your services cost?": "Our pricing is competitive and tailored to meet the needs of businesses in South Africa. Please visit our pricing page for more details.",
+      // Add more questions and answers here later
     };
-    let currentIndex = 0;
 
-    function showApp(index) {
-      phones.forEach((phone, i) => {
-        phone.classList.toggle('active', i === index);
-        if (i === index) {
-          refreshIframe(i);
+    function toggleChatPopup() {
+      chatPopup.classList.toggle('active');
+      closeChatButton.classList.add('active');
+      crossIcon.style.display = chatPopup.classList.contains('active') ? 'block' : 'none';
+      if (chatPopup.classList.contains('active')) {
+        clearChat(); // Clear chat content when opening
+      }
+    }
+
+    // Close chat
+    function closeChat() {
+      chatPopup.classList.remove('active');
+      closeChatButton.classList.remove('active');
+      crossIcon.style.display = 'none';
+      document.getElementById('userMessage').value = ''; // Clear chat input
+    }
+
+    // Reset chat content
+    function clearChat() {
+      chatPopup.innerHTML = `
+        <div class="message bot-message">
+          <div class="avatar">
+            <img src="tomie-avatar.png" alt="Tomie" class="avatar-img">
+          </div>
+          <div class="message-text">Hi! I’m Tomie! Do you have a question too?</div>
+        </div>
+        <input type="text" id="userMessage" placeholder="Type your question..." maxlength="200">
+        <button onclick="sendMessage()">Send</button>
+      `;
+    }
+
+    // Send message function
+    function sendMessage() {
+      let message = document.getElementById('userMessage').value.trim();
+
+      if (message) {
+        // Show user message
+        const userMessageElement = document.createElement('div');
+        userMessageElement.classList.add('message', 'user-message');
+        userMessageElement.innerHTML = `<div class="avatar"></div><div class="message-text">${message}</div>`;
+        chatPopup.appendChild(userMessageElement);
+
+        // Clear input field
+        document.getElementById('userMessage').value = '';
+        chatPopup.scrollTop = chatPopup.scrollHeight;
+
+        // Bot response
+        let botResponse = "I can only answer questions based on Mapengo Innovations. Would you like me to help with that?";
+        if (faqData[message]) {
+          botResponse = faqData[message]; // Respond with FAQ answer
         }
-      });
-    }
 
-    function refreshIframe(index) {
-      const iframe = iframes[index];
-      const currentSrc = iframe.src;
-      iframe.src = ''; // Temporarily clear the iframe content
-      iframe.src = currentSrc; // Reassign the original source to reload the iframe
-    }
-
-    function nextApp() {
-      currentIndex = (currentIndex + 1) % phones.length;
-      showApp(currentIndex);
+        const botMessageElement = document.createElement('div');
+        botMessageElement.classList.add('message', 'bot-message');
+        botMessageElement.innerHTML = `
+          <div class="avatar">
+            <img src="tomie-avatar.png" alt="Tomie" class="avatar-img">
+          </div>
+          <div class="message-text">${botResponse}</div>`;
+        chatPopup.appendChild(botMessageElement);
+        chatPopup.scrollTop = chatPopup.scrollHeight;
+      }
     }
   </script>
 </body>
-  </html>
+</html>
