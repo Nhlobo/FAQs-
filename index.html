@@ -47,7 +47,6 @@
 
         /* Video container */
         .video-container {
-            display: none;
             width: 80%;
             max-width: 800px;
             margin-bottom: 20px;
@@ -61,44 +60,11 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
         }
 
-        /* Button container */
-        .button-container {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 20px;
-        }
-
-        /* Style for buttons */
-        .nav-btn {
-            background-color: #120fee;
-            color: white;
-            font-size: 1.5em;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            border: none;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .nav-btn i {
-            color: white;
-        }
-
-        .nav-btn:hover {
-            background-color: #0e0ddb;
-        }
-
-        .nav-btn:focus {
-            outline: none;
-        }
-
-        .nav-btn:active {
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        /* Description style */
+        .service-description {
+            font-size: 1.2em;
+            margin-top: 10px;
+            color: #333;
         }
 
         /* Landscape orientation */
@@ -129,101 +95,16 @@
 <section class="service-images">
     <h2>Our Solutions in Action</h2>
 
-    <!-- Video containers -->
-    <div class="video-container" id="video1">
-        <video class="service-video" id="videoElement1" controls>
+    <!-- Video container showcasing all content -->
+    <div class="video-container">
+        <video class="service-video" id="videoElement" controls>
             <source src="VID-20241210-WA0003.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
-        <p class="service-description">Effective Weed Control</p>
+        <p class="service-description">Effective Weed Control, Comprehensive Ant Control, Cockroach Elimination Services, Complete Bed Bug Treatment, Termite Prevention & Elimination</p>
     </div>
 
-    <div class="video-container" id="video2">
-        <video class="service-video" id="videoElement2" controls>
-            <source src="VID-20241210-WA0003.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        <p class="service-description">Comprehensive Ant Control</p>
-    </div>
-
-    <div class="video-container" id="video3">
-        <video class="service-video" id="videoElement3" controls>
-            <source src="VID-20241210-WA0003.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        <p class="service-description">Cockroach Elimination Services</p>
-    </div>
-
-    <div class="video-container" id="video4">
-        <video class="service-video" id="videoElement4" controls>
-            <source src="VID-20241210-WA0003.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        <p class="service-description">Complete Bed Bug Treatment</p>
-    </div>
-
-    <div class="video-container" id="video5">
-        <video class="service-video" id="videoElement5" controls>
-            <source src="VID-20241210-WA0003.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        <p class="service-description">Termite Prevention & Elimination</p>
-    </div>
-
-    <!-- Navigation buttons -->
-    <div class="button-container">
-        <button class="nav-btn" onclick="previousVideo()">
-            <i class="fas fa-arrow-left"></i>
-        </button>
-        <button class="nav-btn" onclick="nextVideo()">
-            <i class="fas fa-arrow-right"></i>
-        </button>
-    </div>
 </section>
-
-<script>
-    let currentVideoIndex = 1;
-    const videos = document.querySelectorAll('.video-container');
-    const videoElements = document.querySelectorAll('.service-video');
-
-    function showVideo(index) {
-        // Pause the current video if it's playing
-        const currentVideo = videoElements[currentVideoIndex - 1];
-        if (currentVideo) {
-            currentVideo.pause(); // Stop the current video
-        }
-
-        // Hide all videos
-        videos.forEach((video, i) => {
-            if (i === index) {
-                video.style.display = 'block'; // Show the current video
-            } else {
-                video.style.display = 'none'; // Hide other videos
-            }
-        });
-    }
-
-    // Show the first video on load
-    showVideo(currentVideoIndex - 1);
-
-    function nextVideo() {
-        if (currentVideoIndex < videos.length) {
-            currentVideoIndex++;
-        } else {
-            currentVideoIndex = 1; // Loop back to the first video
-        }
-        showVideo(currentVideoIndex - 1);
-    }
-
-    function previousVideo() {
-        if (currentVideoIndex > 1) {
-            currentVideoIndex--;
-        } else {
-            currentVideoIndex = videos.length; // Loop back to the last video
-        }
-        showVideo(currentVideoIndex - 1);
-    }
-</script>
 
 </body>
 
