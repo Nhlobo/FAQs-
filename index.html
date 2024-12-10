@@ -58,7 +58,7 @@ h2 {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-/* Button container */
+        /* Button container */
 .button-container {
     display: flex;
     justify-content: center; /* Center buttons horizontally */
@@ -66,32 +66,41 @@ h2 {
     margin-top: 20px;
 }
 
+/* Style for buttons */
 .nav-btn {
     background-color: #120fee;
     color: white;
-    font-size: 1.2em;
-    padding: 10px 20px;
+    font-size: 1.5em; /* Larger font size for arrows */
+    width: 50px; /* Fixed width */
+    height: 50px; /* Fixed height to make the button round */
+    border-radius: 50%; /* Make the button round */
     border: none;
-    border-radius: 5px;
+    display: flex;
+    justify-content: center; /* Center the icon inside */
+    align-items: center; /* Center the icon vertically */
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
+.nav-btn i {
+    color: white; /* Set icon color to white */
+}
+
 .nav-btn:hover {
-    background-color: #0e0ddb;
+    background-color: #0e0ddb; /* Darker shade on hover */
 }
 
-/* Media Queries for Responsiveness */
-@media (max-width: 768px) {
-    h2 {
-        font-size: 2em;
-    }
-
-    .video-container {
-        width: 90%;
-    }
+/* Hover effect for the buttons */
+.nav-btn:focus {
+    outline: none; /* Remove focus outline */
 }
-  
+
+/* Optional: add a small shadow for better effect */
+.nav-btn:active {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+
     </style>
 </head>
 <body>
@@ -140,9 +149,14 @@ h2 {
     </div>
 
     <div class="button-container">
-        <button class="nav-btn" onclick="previousVideo()">Previous</button>
-        <button class="nav-btn" onclick="nextVideo()">Next</button>
+        <button class="nav-btn" onclick="previousVideo()">
+            <i class="fas fa-arrow-left"></i> <!-- Left arrow icon -->
+        </button>
+        <button class="nav-btn" onclick="nextVideo()">
+            <i class="fas fa-arrow-right"></i> <!-- Right arrow icon -->
+        </button>
     </div>
+
 </section>
 
 <script>
