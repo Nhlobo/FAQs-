@@ -6,18 +6,17 @@
     <title>Our Solutions in Action</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <style>
-        /* Glassmorphism Style */
+        /* Solid White Background */
         body {
             margin: 0;
             padding: 0;
             font-family: 'Poppins', sans-serif;
-            background: linear-gradient(to right, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.6)), url('background-image.jpg') no-repeat center center fixed;
-            background-size: cover;
+            background-color: #ffffff; /* Pure white background */
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            color: white;
+            color: black;
         }
 
         .service-images {
@@ -25,39 +24,24 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(15px);
-            border-radius: 15px;
             padding: 40px;
             width: 80%;
             max-width: 900px;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
             text-align: center;
-            transition: all 0.5s ease;
+            border-radius: 15px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
         }
 
         h2 {
             font-size: 2.5em;
             margin-bottom: 25px;
-            letter-spacing: 1px;
-        }
-
-        .service-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            width: 100%;
         }
 
         .video-container {
+            display: none; /* Initially hide all videos */
             width: 100%;
-            border-radius: 10px;
-            overflow: hidden;
+            margin-bottom: 20px;
             position: relative;
-            opacity: 1;
-            transition: opacity 1s ease;
         }
 
         .service-video {
@@ -67,41 +51,31 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
         }
 
-        .image-container {
-            display: none;
-            margin-top: 20px;
-            opacity: 0;
-            transition: opacity 1s ease;
+        .service-description {
+            margin-top: 10px;
+            font-size: 1.2em;
         }
 
-        .service-image {
+        .button-container {
+            display: flex;
+            justify-content: space-between;
             width: 100%;
-            max-height: 400px;
-            object-fit: cover;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+            margin-top: 20px;
         }
 
-        .next-btn {
-            background: linear-gradient(90deg, #007bff, #00bcd4);
+        .nav-btn {
+            background-color: #007bff;
             color: white;
             font-size: 1.2em;
-            padding: 15px 30px;
+            padding: 10px 20px;
             border: none;
-            border-radius: 25px;
+            border-radius: 5px;
             cursor: pointer;
-            margin-top: 30px;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: background-color 0.3s ease;
         }
 
-        .next-btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
-        }
-
-        .next-btn:active {
-            transform: translateY(2px);
+        .nav-btn:hover {
+            background-color: #0056b3;
         }
 
         @media (max-width: 768px) {
@@ -120,40 +94,85 @@
 <section class="service-images">
     <h2>Our Solutions in Action</h2>
 
-    <div class="service-item">
-        <!-- Video Section -->
-        <div class="video-container">
-            <video class="service-video" id="serviceVideo" controls>
-                <source src="path/to/your/video.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        </div>
+    <div class="video-container" id="video1">
+        <video class="service-video" controls>
+            <source src="images/video-weeds.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <p class="service-description">Effective Weed Control</p>
+    </div>
 
-        <!-- Image Section (after the action) -->
-        <div class="image-container">
-            <img src="path/to/your/after-action-image.jpg" alt="After Our Work" class="service-image">
-            <p>After Our Work: The Results</p>
-        </div>
+    <div class="video-container" id="video2">
+        <video class="service-video" controls>
+            <source src="images/video-ants.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <p class="service-description">Comprehensive Ant Control</p>
+    </div>
 
-        <!-- Next Button -->
-        <button class="next-btn" onclick="nextSection()">Next</button>
+    <div class="video-container" id="video3">
+        <video class="service-video" controls>
+            <source src="images/video-cockroach.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <p class="service-description">Cockroach Elimination Services</p>
+    </div>
+
+    <div class="video-container" id="video4">
+        <video class="service-video" controls>
+            <source src="images/video-bedbugs.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <p class="service-description">Complete Bed Bug Treatment</p>
+    </div>
+
+    <div class="video-container" id="video5">
+        <video class="service-video" controls>
+            <source src="images/video-termites.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <p class="service-description">Termite Prevention & Elimination</p>
+    </div>
+
+    <div class="button-container">
+        <button class="nav-btn" onclick="previousVideo()">Previous</button>
+        <button class="nav-btn" onclick="nextVideo()">Next</button>
     </div>
 </section>
 
 <script>
-    function nextSection() {
-        // Hide video and show image after the action with smooth transition
-        const videoContainer = document.querySelector('.video-container');
-        const imageContainer = document.querySelector('.image-container');
-        
-        videoContainer.style.opacity = '0';
-        setTimeout(() => {
-            videoContainer.style.display = 'none';  // Hide video after fade-out
-            imageContainer.style.display = 'block'; // Show image after fade-in
-            setTimeout(() => {
-                imageContainer.style.opacity = '1';  // Fade-in image smoothly
-            }, 100); // Small delay to allow the display change to take effect
-        }, 1000); // Wait for the fade-out to finish before hiding the video
+    // Initially display the first video
+    let currentVideoIndex = 1;
+    const videos = document.querySelectorAll('.video-container');
+    function showVideo(index) {
+        videos.forEach((video, i) => {
+            if (i === index) {
+                video.style.display = 'block'; // Show the current video
+            } else {
+                video.style.display = 'none'; // Hide other videos
+            }
+        });
+    }
+    
+    // Show the first video on load
+    showVideo(currentVideoIndex - 1);
+
+    function nextVideo() {
+        if (currentVideoIndex < videos.length) {
+            currentVideoIndex++;
+        } else {
+            currentVideoIndex = 1; // Loop back to the first video
+        }
+        showVideo(currentVideoIndex - 1);
+    }
+
+    function previousVideo() {
+        if (currentVideoIndex > 1) {
+            currentVideoIndex--;
+        } else {
+            currentVideoIndex = videos.length; // Loop back to the last video
+        }
+        showVideo(currentVideoIndex - 1);
     }
 </script>
 
