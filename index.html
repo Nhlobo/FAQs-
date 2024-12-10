@@ -7,101 +7,99 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <style>
-     /* Reset default margin and padding */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+        /* Reset default margin and padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-/* Body styles */
-body {
-    background-color: #ffffff;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    font-family: Arial, sans-serif;
-    color: black;
-    align-items: center; /* Center content horizontally */
-}
+        /* Body styles */
+        body {
+            background-color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            font-family: Arial, sans-serif;
+            color: black;
+            align-items: center; /* Center content horizontally */
+        }
 
-/* The main content section */
-.service-images {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 0; /* Remove padding to avoid any unwanted margin behind */
-    margin: 0;  /* Remove margin to avoid extra space */
-    width: 100%; /* Make it take the full width */
-    height: 100vh; /* Make it take the full viewport height */
-    text-align: center;
-}
+        /* The main content section */
+        .service-images {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 0; /* Remove padding to avoid any unwanted margin behind */
+            margin: 0;  /* Remove margin to avoid extra space */
+            width: 100%; /* Make it take the full width */
+            height: 100vh; /* Make it take the full viewport height */
+            text-align: center;
+        }
 
-/* Heading style */
-h2 {
-    font-size: 2.5em;
-    margin-bottom: 20px; /* Space below the heading */
-}
+        /* Heading style */
+        h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px; /* Space below the heading */
+        }
 
-/* Video container */
-.video-container {
-    display: none; /* Initially hide all videos */
-    width: 80%; /* Adjust width */
-    max-width: 900px;
-    margin-bottom: 20px; /* Space between video and description */
-}
+        /* Video container */
+        .video-container {
+            display: none; /* Initially hide all videos */
+            width: 80%; /* Adjust width */
+            max-width: 900px;
+            margin-bottom: 20px; /* Space between video and description */
+        }
 
-.service-video {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-}
+        .service-video {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
 
         /* Button container */
-.button-container {
-    display: flex;
-    justify-content: center; /* Center buttons horizontally */
-    gap: 20px; /* Add space between buttons */
-    margin-top: 20px;
-}
+        .button-container {
+            display: flex;
+            justify-content: center; /* Center buttons horizontally */
+            gap: 20px; /* Add space between buttons */
+            margin-top: 20px;
+        }
 
-/* Style for buttons */
-.nav-btn {
-    background-color: #120fee;
-    color: white;
-    font-size: 1.5em; /* Larger font size for arrows */
-    width: 50px; /* Fixed width */
-    height: 50px; /* Fixed height to make the button round */
-    border-radius: 50%; /* Make the button round */
-    border: none;
-    display: flex;
-    justify-content: center; /* Center the icon inside */
-    align-items: center; /* Center the icon vertically */
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
+        /* Style for buttons */
+        .nav-btn {
+            background-color: #120fee;
+            color: white;
+            font-size: 1.5em; /* Larger font size for arrows */
+            width: 50px; /* Fixed width */
+            height: 50px; /* Fixed height to make the button round */
+            border-radius: 50%; /* Make the button round */
+            border: none;
+            display: flex;
+            justify-content: center; /* Center the icon inside */
+            align-items: center; /* Center the icon vertically */
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
 
-.nav-btn i {
-    color: white; /* Set icon color to white */
-}
+        .nav-btn i {
+            color: white; /* Set icon color to white */
+        }
 
-.nav-btn:hover {
-    background-color: #0e0ddb; /* Darker shade on hover */
-}
+        .nav-btn:hover {
+            background-color: #0e0ddb; /* Darker shade on hover */
+        }
 
-/* Hover effect for the buttons */
-.nav-btn:focus {
-    outline: none; /* Remove focus outline */
-}
+        /* Hover effect for the buttons */
+        .nav-btn:focus {
+            outline: none; /* Remove focus outline */
+        }
 
-/* Optional: add a small shadow for better effect */
-.nav-btn:active {
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-}
-
-
+        /* Optional: add a small shadow for better effect */
+        .nav-btn:active {
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
     </style>
 </head>
 <body>
@@ -111,7 +109,7 @@ h2 {
 
     <div class="video-container" id="video1">
         <video class="service-video" controls>
-            <source src="https://drive.google.com/uc?id=YOUR_FILE_ID_1" type="video/mp4">
+            <source src="https://drive.google.com/uc?id=YOUR_FILE_ID_1&export=download" type="video/mp4">
             Your browser does not support the video tag.
         </video>
         <p class="service-description">Effective Weed Control</p>
@@ -119,7 +117,7 @@ h2 {
 
     <div class="video-container" id="video2">
         <video class="service-video" controls>
-            <source src="https://drive.google.com/uc?id=YOUR_FILE_ID_1" type="video/mp4">
+            <source src="https://drive.google.com/uc?id=YOUR_FILE_ID_2&export=download" type="video/mp4">
             Your browser does not support the video tag.
         </video>
         <p class="service-description">Comprehensive Ant Control</p>
@@ -127,7 +125,7 @@ h2 {
 
     <div class="video-container" id="video3">
         <video class="service-video" controls>
-           <source src="https://drive.google.com/uc?id=YOUR_FILE_ID_1" type="video/mp4">
+           <source src="https://drive.google.com/uc?id=YOUR_FILE_ID_3&export=download" type="video/mp4">
             Your browser does not support the video tag.
         </video>
         <p class="service-description">Cockroach Elimination Services</p>
@@ -135,7 +133,7 @@ h2 {
 
     <div class="video-container" id="video4">
         <video class="service-video" controls>
-            <source src="https://drive.google.com/uc?id=YOUR_FILE_ID_1" type="video/mp4">
+            <source src="https://drive.google.com/uc?id=YOUR_FILE_ID_4&export=download" type="video/mp4">
             Your browser does not support the video tag.
         </video>
         <p class="service-description">Complete Bed Bug Treatment</p>
@@ -143,7 +141,7 @@ h2 {
 
     <div class="video-container" id="video5">
         <video class="service-video" controls>
-            <source src="https://drive.google.com/uc?id=YOUR_FILE_ID_1" type="video/mp4">
+            <source src="https://drive.google.com/uc?id=YOUR_FILE_ID_5&export=download" type="video/mp4">
             Your browser does not support the video tag.
         </video>
         <p class="service-description">Termite Prevention & Elimination</p>
