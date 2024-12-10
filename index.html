@@ -5,114 +5,103 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Solutions in Action</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <style>
-        /* Glassmorphism Style */
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(to right, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.6)), url('background-image.jpg') no-repeat center center fixed;
-            background-size: cover;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            color: white;
-        }
+     /* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        .service-images {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(15px);
-            border-radius: 15px;
-            padding: 40px;
-            width: 80%;
-            max-width: 900px;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
-            text-align: center;
-            transition: all 0.5s ease;
-        }
+/* Body styles */
+body {
+    background-color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+    color: black;
+    align-items: center; /* Center content horizontally */
+}
 
-        h2 {
-            font-size: 2.5em;
-            margin-bottom: 25px;
-            letter-spacing: 1px;
-        }
+/* The main content section */
+.service-images {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0; /* Remove padding to avoid any unwanted margin behind */
+    margin: 0;  /* Remove margin to avoid extra space */
+    width: 100%; /* Make it take the full width */
+    height: 100vh; /* Make it take the full viewport height */
+    text-align: center;
+}
 
-        .service-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            width: 100%;
-        }
+/* Heading style */
+h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px; /* Space below the heading */
+}
 
-        .video-container {
-            width: 100%;
-            border-radius: 10px;
-            overflow: hidden;
-            position: relative;
-            opacity: 1;
-            transition: opacity 1s ease;
-        }
+/* Video container */
+.video-container {
+    display: none; /* Initially hide all videos */
+    width: 80%; /* Adjust width */
+    max-width: 900px;
+    margin-bottom: 20px; /* Space between video and description */
+}
 
-        .service-video {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-        }
+.service-video {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
 
-        .image-container {
-            display: none;
-            margin-top: 20px;
-            opacity: 0;
-            transition: opacity 1s ease;
-        }
+        /* Button container */
+.button-container {
+    display: flex;
+    justify-content: center; /* Center buttons horizontally */
+    gap: 20px; /* Add space between buttons */
+    margin-top: 20px;
+}
 
-        .service-image {
-            width: 100%;
-            max-height: 400px;
-            object-fit: cover;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
-        }
+/* Style for buttons */
+.nav-btn {
+    background-color: #120fee;
+    color: white;
+    font-size: 1.5em; /* Larger font size for arrows */
+    width: 50px; /* Fixed width */
+    height: 50px; /* Fixed height to make the button round */
+    border-radius: 50%; /* Make the button round */
+    border: none;
+    display: flex;
+    justify-content: center; /* Center the icon inside */
+    align-items: center; /* Center the icon vertically */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
 
-        .next-btn {
-            background: linear-gradient(90deg, #007bff, #00bcd4);
-            color: white;
-            font-size: 1.2em;
-            padding: 15px 30px;
-            border: none;
-            border-radius: 25px;
-            cursor: pointer;
-            margin-top: 30px;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
+.nav-btn i {
+    color: white; /* Set icon color to white */
+}
 
-        .next-btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
-        }
+.nav-btn:hover {
+    background-color: #0e0ddb; /* Darker shade on hover */
+}
 
-        .next-btn:active {
-            transform: translateY(2px);
-        }
+/* Hover effect for the buttons */
+.nav-btn:focus {
+    outline: none; /* Remove focus outline */
+}
 
-        @media (max-width: 768px) {
-            .service-images {
-                padding: 20px;
-                width: 90%;
-            }
-            h2 {
-                font-size: 2em;
-            }
-        }
+/* Optional: add a small shadow for better effect */
+.nav-btn:active {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+
     </style>
 </head>
 <body>
@@ -120,40 +109,90 @@
 <section class="service-images">
     <h2>Our Solutions in Action</h2>
 
-    <div class="service-item">
-        <!-- Video Section -->
-        <div class="video-container">
-            <video class="service-video" id="serviceVideo" controls>
-                <source src="path/to/your/video.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        </div>
-
-        <!-- Image Section (after the action) -->
-        <div class="image-container">
-            <img src="path/to/your/after-action-image.jpg" alt="After Our Work" class="service-image">
-            <p>After Our Work: The Results</p>
-        </div>
-
-        <!-- Next Button -->
-        <button class="next-btn" onclick="nextSection()">Next</button>
+    <div class="video-container" id="video1">
+        <video class="service-video" controls>
+            <source src="https://drive.google.com/uc?id=YOUR_FILE_ID_1" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <p class="service-description">Effective Weed Control</p>
     </div>
+
+    <div class="video-container" id="video2">
+        <video class="service-video" controls>
+            <source src="https://drive.google.com/uc?id=YOUR_FILE_ID_1" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <p class="service-description">Comprehensive Ant Control</p>
+    </div>
+
+    <div class="video-container" id="video3">
+        <video class="service-video" controls>
+           <source src="https://drive.google.com/uc?id=YOUR_FILE_ID_1" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <p class="service-description">Cockroach Elimination Services</p>
+    </div>
+
+    <div class="video-container" id="video4">
+        <video class="service-video" controls>
+            <source src="https://drive.google.com/uc?id=YOUR_FILE_ID_1" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <p class="service-description">Complete Bed Bug Treatment</p>
+    </div>
+
+    <div class="video-container" id="video5">
+        <video class="service-video" controls>
+            <source src="https://drive.google.com/uc?id=YOUR_FILE_ID_1" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <p class="service-description">Termite Prevention & Elimination</p>
+    </div>
+
+    <div class="button-container">
+        <button class="nav-btn" onclick="previousVideo()">
+            <i class="fas fa-arrow-left"></i> <!-- Left arrow icon -->
+        </button>
+        <button class="nav-btn" onclick="nextVideo()">
+            <i class="fas fa-arrow-right"></i> <!-- Right arrow icon -->
+        </button>
+    </div>
+
 </section>
 
 <script>
-    function nextSection() {
-        // Hide video and show image after the action with smooth transition
-        const videoContainer = document.querySelector('.video-container');
-        const imageContainer = document.querySelector('.image-container');
-        
-        videoContainer.style.opacity = '0';
-        setTimeout(() => {
-            videoContainer.style.display = 'none';  // Hide video after fade-out
-            imageContainer.style.display = 'block'; // Show image after fade-in
-            setTimeout(() => {
-                imageContainer.style.opacity = '1';  // Fade-in image smoothly
-            }, 100); // Small delay to allow the display change to take effect
-        }, 1000); // Wait for the fade-out to finish before hiding the video
+    // Initially display the first video
+    let currentVideoIndex = 1;
+    const videos = document.querySelectorAll('.video-container');
+    function showVideo(index) {
+        videos.forEach((video, i) => {
+            if (i === index) {
+                video.style.display = 'block'; // Show the current video
+            } else {
+                video.style.display = 'none'; // Hide other videos
+            }
+        });
+    }
+    
+    // Show the first video on load
+    showVideo(currentVideoIndex - 1);
+
+    function nextVideo() {
+        if (currentVideoIndex < videos.length) {
+            currentVideoIndex++;
+        } else {
+            currentVideoIndex = 1; // Loop back to the first video
+        }
+        showVideo(currentVideoIndex - 1);
+    }
+
+    function previousVideo() {
+        if (currentVideoIndex > 1) {
+            currentVideoIndex--;
+        } else {
+            currentVideoIndex = videos.length; // Loop back to the last video
+        }
+        showVideo(currentVideoIndex - 1);
     }
 </script>
 
