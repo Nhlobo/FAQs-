@@ -24,7 +24,8 @@
 
         .main-menu {
             list-style-type: none;
-            display: none;
+            display: none; /* Initially hidden on small screens */
+            padding-left: 0;
         }
 
         .menu-item,
@@ -68,7 +69,7 @@
             }
 
             .main-menu {
-                display: flex;
+                display: flex; /* Display menu horizontally on desktop */
             }
 
             .logo,
@@ -87,6 +88,10 @@
         }
         /* For Desktop Ends */
 
+        /* Active class to display the menu on small screens */
+        .main-menu.active {
+            display: block;
+        }
     </style>
 </head>
 <body>
