@@ -14,7 +14,7 @@
             box-sizing: border-box;
         }
         header {
-            background-color: #4CAF50;
+            background: radial-gradient(circle, rgba(249, 250, 7, 1) 0%, rgba(18, 15, 238, 1) 100%);
             color: white;
             padding: 20px 0;
             text-align: center;
@@ -61,8 +61,7 @@
         .team-member img {
             width: 100%;
             height: auto;
-            border-radius: 50%;
-            border: 4px solid #4CAF50;
+            border-radius: 0; /* Removed border-radius for no round borders */
         }
         .team-member h3 {
             margin-top: 10px;
@@ -73,7 +72,15 @@
             font-size: 1rem;
             color: #777;
         }
-        
+        .company-info {
+            text-align: center;
+            margin-top: 30px;
+            color: #555;
+        }
+        .company-info p {
+            font-size: 1.1rem;
+            margin: 5px 0;
+        }
         @media screen and (max-width: 768px) {
             .about-content {
                 flex-direction: column;
@@ -105,7 +112,7 @@
             </div>
             <div class="about-image">
                 <!-- Replace the URL with your team picture or logo -->
-                <img src="Pest-Control.png" alt="Founder and Team" style="width: 100%; max-width: 500px; border-radius: 10px;">
+                <img src="your-image-url.jpg" alt="Founder and Team" style="width: 100%; max-width: 500px; border-radius: 10px;">
             </div>
         </div>
     </section>
@@ -114,16 +121,22 @@
         <h2>Meet Our Team</h2>
         <div class="team">
             <div class="team-member">
-                <img src="a9987f02973c7ca0cdfe02d277b0d3fa.png" alt="Founder/CEO" />
+                <img src="founder-image.jpg" alt="Founder/CEO" />
                 <h3>Madya Swa Nyuku</h3>
                 <p>Founder & CEO</p>
             </div>
             <div class="team-member">
-                <img src="dead,cockcroach.jpg" alt="Pest Control Expert" />
+                <img src="worker-image.jpg" alt="Pest Control Expert" />
                 <h3>[Worker’s Name]</h3>
                 <p>Pest Control Expert</p>
             </div>
         </div>
+    </section>
+
+    <section class="company-info">
+        <p><strong>Registered Business Name:</strong> Madya Swa Nyuku Business Services (Pty) Ltd</p>
+        <p><strong>Registration No:</strong> 2024/123456/07</p>
+        <p><strong>Location:</strong> Protea Glen, Johannesburg, South Africa</p>
     </section>
 
 </body>
