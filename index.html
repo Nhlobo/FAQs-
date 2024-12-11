@@ -4,86 +4,161 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Solutions in Action</title>
+    <title>Home Page</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <style>
-        /* Remove all margins and padding */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        /* Body style */
         body {
             background-color: #ffffff;
-            font-family: Arial, sans-serif;
-            color: black;
             min-height: 100vh;
+            font-family: Poppins, Arial, sans-serif;
+            color: black;
             display: flex;
             flex-direction: column;
-            align-items: center;
-            justify-content: center;
         }
 
-        /* Service images container */
-        .service-images {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
+        /* Header and Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
             width: 100%;
+            background-color: #120fee;
+            color: white;
+            padding: 20px;
+            z-index: 1000;
+        }
+
+        header .logo img {
+            max-height: 50px;
+            width: auto;
+        }
+
+        header nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        header nav ul li {
+            margin-left: 30px;
+        }
+
+        header nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+
+        header nav ul li a:hover {
+            color: #1abc9c;
+        }
+
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 4px 0;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
             height: 100vh;
             text-align: center;
+            color: white;
+            padding: 0 20px;
+            background: radial-gradient(circle, rgba(249, 250, 7, 1) 0%, rgba(18, 15, 238, 1) 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
-        /* Heading style */
-        h2 {
-            font-size: 2.5em;
-            margin-bottom: 20px;
-        }
-
-        /* Video container */
-        .video-container {
-            width: 80%;
-            max-width: 800px;
-            margin-bottom: 20px;
-            height: 450px; /* Fixed height for all screen sizes */
-        }
-
-        .service-video {
+        .hero video {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            object-fit: cover;
+            z-index: -1;
         }
 
-        /* Description style */
-        .service-description {
-            font-size: 1.2em;
-            margin-top: 10px;
-            color: #333;
+        .hero h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
         }
 
-        /* Landscape orientation */
-        @media (orientation: landscape) {
-            .service-images {
-                height: 100vh;
-                width: 100%;
-            }
+        .hero p {
+            font-size: 1.5em;
+            max-width: 800px;
+            margin: 0 auto 30px;
         }
 
-        /* Responsive styles */
+        .cta-buttons a {
+            background: rgb(249, 250, 7);
+            background: radial-gradient(circle, rgba(249, 250, 7, 1) 0%, rgba(18, 15, 238, 1) 100%);
+            color: white;
+            padding: 12px 30px;
+            font-size: 18px;
+            text-decoration: none;
+            margin: 0 10px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .cta-buttons a:hover {
+            background: radial-gradient(circle, rgba(18, 15, 238, 1) 0%, rgba(249, 250, 7, 1) 100%);
+        }
+
+        /* Responsive Layout */
         @media (max-width: 768px) {
-            .video-container {
-                width: 90%;
-                max-width: 100%;
-                height: auto; /* Adjust height for smaller screens */
+            header nav ul {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                position: absolute;
+                top: 80px;
+                right: 0;
+                background-color: #120fee;
+                padding: 20px;
+                text-align: center;
             }
 
-            h2 {
-                font-size: 2em;
+            header nav ul li {
+                margin: 10px 0;
+            }
+
+            header nav ul li a {
+                font-size: 18px;
+            }
+
+            header nav ul.show {
+                display: flex;
+            }
+
+            .hamburger {
+                display: flex;
             }
         }
     </style>
@@ -91,20 +166,51 @@
 
 <body>
 
-<section class="service-images">
-    <h2>Our Solutions in Action</h2>
+    <!-- Header Section -->
+    <header>
+        <nav>
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="Madya Swa Nyuku Business Services Logo">
+            </a>
+            <div class="hamburger" onclick="toggleMenu()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <ul>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Our Services</a></li>
+                <li><a href="privacy-policy.html">Pricing</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <!-- Video container showcasing all content -->
-    <div class="video-container">
-        <video class="service-video" id="videoElement" controls>
-            <source src="istockphoto-1257975523-640_adpp_is.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        <p class="service-description">Effective Weed Control, Comprehensive Ant Control, Cockroach Elimination Services, Complete Bed Bug Treatment, Termite Prevention & Elimination</p>
-    </div>
+    <!-- Hero Section -->
+    <main>
+        <section class="hero">
+            <video autoplay muted loop>
+                <source src="video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div>
+                <h1>Leading Eco-Friendly Pest Control Solutions</h1>
+                <p>Protecting homes and businesses from unwanted pests with safe, environmentally responsible methods. Guaranteed results, professional service.</p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="cta-btn">Request a Quote</a>
+                    <a href="services.html" class="cta-btn">Explore Our Services</a>
+                </div>
+            </div>
+        </section>
+    </main>
 
-</section>
-
+    <script>
+        // Toggle menu for mobile screens
+        function toggleMenu() {
+            const navLinks = document.querySelector('header nav ul');
+            navLinks.classList.toggle('show');
+        }
+    </script>
 </body>
 
 </html>
