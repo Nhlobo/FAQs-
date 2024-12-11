@@ -4,9 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
+    <title>Home Page with Video Background</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -14,204 +13,80 @@
             box-sizing: border-box;
         }
 
-        body {
-            background-color: #ffffff;
-            min-height: 100vh;
-            font-family: Poppins, Arial, sans-serif;
-            color: black;
-            display: flex;
-            flex-direction: column;
-        }
-
-        /* Header and Navigation */
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background-color: #120fee;
-            color: white;
-            padding: 20px;
-            z-index: 1000;
-        }
-
-        header .logo img {
-            max-height: 50px;
-            width: auto;
-        }
-
-        header nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        header nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: flex-end;
-        }
-
-        header nav ul li {
-            margin-left: 30px;
-        }
-
-        header nav ul li a {
-            text-decoration: none;
-            color: white;
-            font-size: 16px;
-            transition: color 0.3s;
-        }
-
-        header nav ul li a:hover {
-            color: #1abc9c;
-        }
-
-        /* Hamburger Menu */
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-        }
-
-        .hamburger div {
-            width: 25px;
-            height: 3px;
-            background-color: white;
-            margin: 4px 0;
-        }
-
-        /* Hero Section */
-        .hero {
+        /* Fullscreen Video Container */
+        .fullscreen-video-container {
             position: relative;
             height: 100vh;
-            text-align: center;
-            color: white;
-            padding: 0 20px;
-            background: radial-gradient(circle, rgba(249, 250, 7, 1) 0%, rgba(18, 15, 238, 1) 100%);
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            width: 100vw;
             overflow: hidden;
         }
 
-        .hero video {
+        /* Video styling */
+        .fullscreen-video-container video {
+            position: absolute;
+            width: auto;
+            height: auto;
+            min-width: 100%;
+            min-height: 100%;
+        }
+
+        /* Gradient overlay */
+        .fullscreen-video-overlay {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            object-fit: cover;
-            z-index: -1;
+            background: radial-gradient(circle, rgba(249, 250, 7, 1) 0%, rgba(18, 15, 238, 1) 100%);
+            z-index: 1;
         }
 
-        .hero h1 {
+        /* Video content */
+        .fullscreen-video-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+            text-align: center;
+            color: white;
+        }
+
+        /* Hero heading */
+        .fullscreen-video-content h1 {
             font-size: 3em;
             margin-bottom: 20px;
         }
 
-        .hero p {
+        /* Responsive text */
+        .fullscreen-video-content p {
             font-size: 1.5em;
             max-width: 800px;
             margin: 0 auto 30px;
         }
 
-        .cta-buttons a {
-            background: rgb(249, 250, 7);
-            background: radial-gradient(circle, rgba(249, 250, 7, 1) 0%, rgba(18, 15, 238, 1) 100%);
-            color: white;
-            padding: 12px 30px;
-            font-size: 18px;
-            text-decoration: none;
-            margin: 0 10px;
-            border-radius: 5px;
-            transition: background 0.3s;
-        }
-
-        .cta-buttons a:hover {
-            background: radial-gradient(circle, rgba(18, 15, 238, 1) 0%, rgba(249, 250, 7, 1) 100%);
-        }
-
-        /* Responsive Layout */
-        @media (max-width: 768px) {
-            header nav ul {
-                display: none;
-                width: 100%;
-                flex-direction: column;
-                position: absolute;
-                top: 80px;
-                right: 0;
-                background-color: #120fee;
-                padding: 20px;
-                text-align: center;
-            }
-
-            header nav ul li {
-                margin: 10px 0;
-            }
-
-            header nav ul li a {
-                font-size: 18px;
-            }
-
-            header nav ul.show {
-                display: flex;
-            }
-
-            .hamburger {
-                display: flex;
-            }
-        }
     </style>
 </head>
 
 <body>
 
-    <!-- Header Section -->
-    <header>
-        <nav>
-            <a href="index.html" class="logo">
-                <img src="images/logo.png" alt="Madya Swa Nyuku Business Services Logo">
-            </a>
-            <div class="hamburger" onclick="toggleMenu()">
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
-            <ul>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="services.html">Our Services</a></li>
-                <li><a href="privacy-policy.html">Pricing</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+    <!-- Fullscreen Video Section -->
+    <div class="fullscreen-video-container">
+        <video autoplay loop muted>
+            <source src="https://www.dropbox.com/scl/fi/eg0c3th4vyjnnz09cwxam/22512-328261507_tiny.mp4?rlkey=sk0uvs93a3uby17qbzdx1c3cx&raw=1" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
 
-    <!-- Hero Section -->
-    <main>
-        <section class="hero">
-            <video autoplay muted loop>
-                <source src="VID-20241210-WA0003.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <div>
-                <h1>Leading Eco-Friendly Pest Control Solutions</h1>
-                <p>Protecting homes and businesses from unwanted pests with safe, environmentally responsible methods. Guaranteed results, professional service.</p>
-                <div class="cta-buttons">
-                    <a href="contact.html" class="cta-btn">Request a Quote</a>
-                    <a href="services.html" class="cta-btn">Explore Our Services</a>
-                </div>
-            </div>
-        </section>
-    </main>
+        <!-- Gradient Overlay -->
+        <div class="fullscreen-video-overlay"></div>
 
-    <script>
-        // Toggle menu for mobile screens
-        function toggleMenu() {
-            const navLinks = document.querySelector('header nav ul');
-            navLinks.classList.toggle('show');
-        }
-    </script>
+        <!-- Video Content -->
+        <div class="fullscreen-video-content">
+            <h1>Leading Eco-Friendly Pest Control Solutions</h1>
+            <p>Protecting homes and businesses from unwanted pests with safe, environmentally responsible methods. Guaranteed results, professional service.</p>
+        </div>
+    </div>
+
 </body>
 
 </html>
