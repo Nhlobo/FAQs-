@@ -3,106 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Madya Swa Nyuku Business Services offers eco-friendly, safe, and professional pest control for your home or business. We specialize in termite, rodent, bed bug, and pest management services. Contact us for guaranteed results.">
-    <meta name="keywords" content="pest control, eco-friendly pest control, termite removal, rodent control, bed bugs, ant control, cockroach removal, green pest solutions, pest prevention, Madya Swa Nyuku, professional pest management">
-    <title>Eco-Friendly Pest Control | Madya Swa Nyuku Business Services</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>About Us | [Your Company Name]</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <style>
-        /* Set the page background to black and text to white for contrast */
         body {
-            background-color: black;
-            color: white;
-            font-family: Arial, sans-serif;
+            font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
-
-        /* Full-width, bottom fixed popup */
-        .cookie-popup {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.3); /* Transparent white background */
-            backdrop-filter: blur(10px); /* Apply blur for glassmorphism */
-            border-top: 1px solid rgba(255, 255, 255, 0.5); /* Subtle border at the top */
-            padding: 15px 30px; /* Padding to give some space */
-            color: #fff;
-            font-family: Arial, sans-serif;
-            z-index: 9999;
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px 0;
             text-align: center;
         }
-
-        /* Style for the content inside the popup */
-        .cookie-popup-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        /* Text style */
-        .cookie-popup p {
+        header h1 {
             margin: 0;
-            font-size: 14px;
-            max-width: 800px;
-            flex: 1; /* Allow text to take up available space */
+            font-size: 2.5rem;
         }
-
-        /* Style for the button */
-        .cookie-popup button {
-            background-color: #007bff;
-            border: none;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 14px;
-            transition: background-color 0.3s;
+        section {
+            padding: 40px 20px;
         }
-
-        /* Hover effect for the button */
-        .cookie-popup button:hover {
-            background-color: #0056b3;
+        h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 20px;
         }
-
-        /* Style for the link */
-        .cookie-popup a {
-            color: #FFD700; /* Gold color for the link */
-            text-decoration: underline;
-            margin-left: 10px;
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
+            gap: 30px;
+        }
+        .about-text {
+            flex: 1;
+            max-width: 600px;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        .about-text p {
+            margin-bottom: 10px;
+        }
+        .team {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+        .team-member {
+            text-align: center;
+            max-width: 200px;
+        }
+        .team-member img {
+            width: 100%;
+            height: auto;
+            border-radius: 50%;
+        }
+        .team-member h3 {
+            margin-top: 10px;
+            font-size: 1.2rem;
+            color: #333;
+        }
+        .team-member p {
+            font-size: 1rem;
+            color: #777;
+        }
+        @media screen and (max-width: 768px) {
+            .about-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            .team {
+                flex-direction: column;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Page content goes here -->
-    <h1>Welcome to Madya Swa Nyuku Business Services</h1>
-    <p>We offer eco-friendly pest control solutions for your home and business. Explore our services!</p>
 
-    <!-- Cookie Consent Popup -->
-    <div class="cookie-popup" id="cookie-popup">
-        <div class="cookie-popup-content">
-            <p>This website uses cookies to enhance your experience. By continuing to browse, you agree to our use of cookies. <a href="/cookie-policy" target="_blank">Learn more</a>.</p>
-            <button id="accept-cookies">Got it!</button>
+    <header>
+        <h1>About Us</h1>
+    </header>
+
+    <section>
+        <h2>Welcome to [Your Company Name]</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p>At [Your Company Name], we are committed to providing top-tier pest control solutions to ensure your home and business remain pest-free. Founded by [Founder’s Name], a passionate expert in pest management, our company stands out for its personalized service, eco-friendly practices, and dedicated approach to tackling pest issues head-on.</p>
+                <p>Though our team is small, with [X] years of experience, we bring a high level of professionalism and care to every job. We believe that a pest-free environment should be safe, affordable, and lasting, which is why we focus on providing tailored solutions that meet the unique needs of our customers.</p>
+                <p>Whether you’re dealing with ants, rodents, termites, or any other pests, we’re here to provide swift, effective, and sustainable pest control solutions. Let us handle your pest problems so you can enjoy peace of mind.</p>
+            </div>
+            <div class="about-image">
+                <!-- Replace the URL with your team picture or logo -->
+                <img src="your-image-url.jpg" alt="Founder and Team" style="width: 100%; max-width: 500px; border-radius: 10px;">
+            </div>
         </div>
-    </div>
+    </section>
 
-    <!-- JavaScript to handle Cookie Popup behavior -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            // Check if the user has already accepted cookies
-            if (!localStorage.getItem('cookiesAccepted')) {
-                document.getElementById('cookie-popup').style.display = 'flex';
-            }
+    <section>
+        <h2>Meet the Team</h2>
+        <div class="team">
+            <div class="team-member">
+                <img src="founder-image.jpg" alt="Founder/CEO" />
+                <h3>[Founder’s Name]</h3>
+                <p>Founder & CEO</p>
+            </div>
+            <div class="team-member">
+                <img src="worker-image.jpg" alt="Team Member" />
+                <h3>[Worker’s Name]</h3>
+                <p>Pest Control Expert</p>
+            </div>
+        </div>
+    </section>
 
-            // Handle cookie consent on button click
-            document.getElementById('accept-cookies').addEventListener('click', function () {
-                // Store user consent in localStorage
-                localStorage.setItem('cookiesAccepted', 'true');
-                // Hide the popup
-                document.getElementById('cookie-popup').style.display = 'none';
-            });
-        });
-    </script>
 </body>
 </html>
