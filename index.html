@@ -3,218 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Navigation Bar with Hero Section</title>
+    <meta name="description" content="Madya Swa Nyuku Business Services offers eco-friendly, safe, and professional pest control for your home or business. We specialize in termite, rodent, bed bug, and pest management services. Contact us for guaranteed results.">
+    <meta name="keywords" content="pest control, eco-friendly pest control, termite removal, rodent control, bed bugs, ant control, cockroach removal, green pest solutions, pest prevention, Madya Swa Nyuku, professional pest management">
+    <title>Eco-Friendly Pest Control | Madya Swa Nyuku Business Services</title>
     <style>
-        * {
-            box-sizing: border-box;
-            padding: 0;
-            margin: 0;
-        }
-
-        body {
-            font-family: 'Montserrat', sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-
-        .navigation-bar {
-            font-size: 18px;
-            background-color: #120fee;
-            padding: 10px 10px;
+        /* Full-width, bottom fixed popup */
+        .cookie-popup {
             position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-        }
-
-        .main-menu {
-            list-style-type: none;
-            display: none; /* Initially hidden on small screens */
-            padding-left: 0;
-        }
-
-        .menu-item,
-        .logo {
-            text-decoration: none;
-            color: white;
-        }
-
-        .main-menu li {
-            text-align: center;
-            margin: 16px auto;
-        }
-
-        .logo {
-            display: inline-block;
-            font-size: 24px;
-            margin-top: 10px;
-            margin-left: 20px;
-        }
-
-        .logo img {
-            max-height: 40px;  /* Adjust as needed */
-            width: auto;
-        }
-
-        .toggle-button {
-            position: absolute;
-            top: 10px;
-            right: 20px;
-            color: rgba(255, 255, 255, 0.8);
-            font-size: 24px;
-            cursor: pointer;
-        }
-
-        /* For Desktop Start */
-        @media screen and (min-width: 768px) {
-            .toggle-button {
-                display: none;
-            }
-
-            .navigation-bar {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                padding: 25px 40px;
-            }
-
-            .main-menu {
-                display: flex; /* Display menu horizontally on desktop */
-            }
-
-            .logo,
-            .main-menu li {
-                margin: 0;
-            }
-
-            .menu-item {
-                margin-left: 30px;
-            }
-
-            .logo:hover,
-            .menu-item:hover {
-                color: yellow;
-            }
-        }
-        /* For Desktop Ends */
-
-        /* Active class to display the menu on small screens */
-        .main-menu.active {
-            display: block;
-        }
-
-        /* Hero Section */
-        .hero {
-            position: relative;
-            height: 100vh;
-            text-align: center;
-            color: white;
-            padding: 0 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 60px; /* This ensures the hero starts below the fixed navbar */
-        }
-
-        .hero video {
-            position: absolute;
-            top: 0;
+            bottom: 0;
             left: 0;
             width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: -1;
+            background: rgba(255, 255, 255, 0.3); /* Transparent white background */
+            backdrop-filter: blur(10px); /* Apply blur for glassmorphism */
+            border-top: 1px solid rgba(255, 255, 255, 0.5); /* Subtle border at the top */
+            padding: 15px 30px; /* Padding to give some space */
+            color: #fff;
+            font-family: Arial, sans-serif;
+            z-index: 9999;
+            text-align: center;
         }
 
-        .hero h1 {
-            font-size: 3em;
-            margin-bottom: 20px;
+        /* Style for the content inside the popup */
+        .cookie-popup-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
-        .hero p {
-            font-size: 1.5em;
+        /* Text style */
+        .cookie-popup p {
+            margin: 0;
+            font-size: 14px;
             max-width: 800px;
-            margin: 0 auto 30px;
+            flex: 1; /* Allow text to take up available space */
         }
 
-        .cta-buttons a {
-            background: rgb(249, 250, 7);
-            background: radial-gradient(circle, rgba(249, 250, 7, 1) 0%, rgba(18, 15, 238, 1) 100%);
+        /* Style for the button */
+        .cookie-popup button {
+            background-color: #007bff;
+            border: none;
             color: white;
-            padding: 12px 30px;
-            font-size: 18px;
-            text-decoration: none;
-            margin: 0 10px;
+            padding: 10px 20px;
             border-radius: 5px;
-            transition: background 0.3s;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.3s;
         }
 
-        .cta-buttons a:hover {
-            background: radial-gradient(circle, rgba(18, 15, 238, 1) 0%, rgba(249, 250, 7, 1) 100%);
+        /* Hover effect for the button */
+        .cookie-popup button:hover {
+            background-color: #0056b3;
         }
 
-        /* Responsive Layout */
-        @media (max-width: 768px) {
-            header nav ul {
-                display: none;
-                width: 100%;
-                flex-direction: column;
-                position: absolute;
-                top: 80px;
-                right: 0;
-                background-color: #120fee;
-                padding: 20px;
-                text-align: center;
-            }
+        /* Style for the link */
+        .cookie-popup a {
+            color: #FFD700; /* Gold color for the link */
+            text-decoration: underline;
+            margin-left: 10px;
         }
     </style>
 </head>
 <body>
+    <!-- Page content goes here -->
+    <h1>Welcome to Madya Swa Nyuku Business Services</h1>
+    <p>We offer eco-friendly pest control solutions for your home and business. Explore our services!</p>
 
-    <nav class="navigation-bar">
-        <a href="#" class="logo"><img src="huawei.png" alt="Logo"></a>
-        <span class="toggle-button">&#9776;</span>
-        <ul class="main-menu">
-            <li><a href="#" class="menu-item">Home</a></li>
-            <li><a href="#" class="menu-item">Articles</a></li>
-            <li><a href="#" class="menu-item">Services</a></li>
-            <li><a href="#" class="menu-item">About Us</a></li>
-            <li><a href="#" class="menu-item">Contact Us</a></li>
-        </ul>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <video autoplay muted loop>
-            <source src="istockphoto-1257975523-640_adpp_is.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        <div>
-            <h1>Welcome to Our Website</h1>
-            <p>Discover amazing content and services we offer.</p>
-            <div class="cta-buttons">
-                <a href="#">Learn More</a>
-                <a href="#">Get Started</a>
-            </div>
+    <!-- Cookie Consent Popup -->
+    <div class="cookie-popup" id="cookie-popup">
+        <div class="cookie-popup-content">
+            <p>This website uses cookies to enhance your experience. By continuing to browse, you agree to our use of cookies. <a href="/cookie-policy" target="_blank">Learn more</a>.</p>
+            <button id="accept-cookies">Got it!</button>
         </div>
-    </section>
+    </div>
 
+    <!-- JavaScript to handle Cookie Popup behavior -->
     <script>
-        const toggleButton = document.querySelector(".toggle-button");
-        const mainMenu = document.querySelector(".main-menu");
-
-        toggleButton.addEventListener('click', function () {
-            // Toggles the active class
-            mainMenu.classList.toggle('active');
-            if (mainMenu.classList.contains("active")) {              
-                // Adds the close (x) icon 
-                toggleButton.innerHTML = "&#215;";
-            } else {          
-                // Adds the hamburger icon 
-                toggleButton.innerHTML = "&#9776;";
+        document.addEventListener('DOMContentLoaded', function () {
+            // Check if the user has already accepted cookies
+            if (!localStorage.getItem('cookiesAccepted')) {
+                document.getElementById('cookie-popup').style.display = 'flex';
             }
+
+            // Handle cookie consent on button click
+            document.getElementById('accept-cookies').addEventListener('click', function () {
+                // Store user consent in localStorage
+                localStorage.setItem('cookiesAccepted', 'true');
+                // Hide the popup
+                document.getElementById('cookie-popup').style.display = 'none';
+            });
         });
     </script>
-
 </body>
 </html>
