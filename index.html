@@ -7,6 +7,297 @@
     <title>About Us | Madya Swa Nyuku Business Services (Pty) Ltd</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <style>
+        /* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    font-size: 14px; /* Base font size */
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    color: #333;
+    padding: 0; /* Removed extra padding around body */
+}
+
+/* Heading Styles */
+h1, h2 {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+}
+
+h1 {
+    font-size: 22px; /* Base size for h1 */
+    margin-bottom: 15px;
+}
+
+h2 {
+    font-size: 18px; /* Base size for h2 */
+    margin-bottom: 10px;
+    color: #555;
+}
+
+/* Paragraph Styling */
+p {
+    margin: 12px 0;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* Header Styling */
+header {
+    background-color: #120fee;
+    color: white;
+    padding: 10px 0;
+    width: 100%;
+    text-align: center;
+    margin: 0;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+}
+
+header nav ul li {
+    margin: 0 12px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: #1abc9c;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #120fee;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    width: 100%;
+    margin: 0;
+}
+
+footer p {
+    font-size: 13px;
+    color: white;
+    margin-bottom: 8px;
+    font-family: Arial, sans-serif;
+}
+
+footer .footer-bottom {
+    font-size: 11px;
+    color: #95a5a6;
+}
+
+footer .footer-links a {
+    font-size: 13px;
+    color: white;
+    text-decoration: none;
+    margin: 0 8px;
+    font-family: Arial, sans-serif;
+}
+
+footer .footer-links a:hover {
+    text-decoration: underline;
+}
+
+footer .social-icons {
+    display: inline-block;
+    margin-top: 12px;
+}
+
+footer .social-icons a {
+    margin: 0 8px;
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer .social-icons a:hover {
+    color: #1abc9c;
+}
+
+/* List Styling */
+ul {
+    list-style-type: square;
+    margin-left: 20px;
+}
+
+/* Media Queries for Responsiveness */
+
+/* Small devices (phones) */
+@media (max-width: 600px) {
+    body {
+        font-size: 12px; /* Slightly smaller font on small screens */
+    }
+
+    h1 {
+        font-size: 18px; /* Smaller heading size */
+    }
+
+    h2 {
+        font-size: 16px; /* Smaller h2 font size */
+    }
+
+    header nav ul {
+        flex-direction: column; /* Stack navigation items on smaller screens */
+    }
+
+    header nav ul li {
+        margin: 8px 0; /* Adjust margin for vertical layout */
+    }
+
+    footer p {
+        font-size: 12px; /* Adjust footer text size */
+    }
+
+    footer .footer-links a {
+        font-size: 12px; /* Adjust footer link size */
+    }
+
+    footer .social-icons a {
+        font-size: 18px; /* Smaller icon size for better fit */
+    }
+}
+
+/* Medium devices (tablets) */
+@media (max-width: 768px) {
+    body {
+        font-size: 13px; /* Slightly larger than small devices, but still compact */
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    h2 {
+        font-size: 17px;
+    }
+
+    header nav ul {
+        flex-direction: column;
+    }
+
+    header nav ul li {
+        margin: 10px 0; /* Adjust margin for vertical navigation */
+    }
+
+    footer p {
+        font-size: 13px;
+    }
+
+    footer .footer-links a {
+        font-size: 13px;
+    }
+
+    footer .social-icons a {
+        font-size: 19px;
+    }
+}
+
+/* Larger devices (desktops) */
+@media (min-width: 1024px) {
+    body {
+        font-size: 14px; /* Base font size for larger screens */
+    }
+
+    h1 {
+        font-size: 22px; /* Larger headings for desktops */
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    header nav ul {
+        flex-direction: row; /* Horizontal layout for larger screens */
+    }
+
+    footer p {
+        font-size: 13px;
+    }
+
+    footer .footer-links a {
+        font-size: 14px;
+    }
+
+    footer .social-icons a {
+        font-size: 20px;
+    }
+}
+
+/* Section Styling */
+section {
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+h2 {
+    font-size: 2em;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #555;
+}
+
+/* Team Member Styling */
+.team-member {
+    background-color: #ecf0f1;
+    padding: 20px;
+    margin-top: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.team-member h3 {
+    font-size: 1.8em;
+    color: #34495e;
+    margin-bottom: 10px;
+}
+
+.team-member p {
+    color: #7f8c8d;
+    margin-bottom: 8px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    main {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.8em;
+    }
+
+    .team-member {
+        margin-top: 10px;
+    }
+}
         body {
             font-family: 'Roboto', sans-serif;
             margin: 0;
@@ -97,6 +388,18 @@
 </head>
 <body>
 
+<!-- Header Section -->
+<header>
+    <nav>
+       <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Our Services</a></li>
+            <li><a href="privacy-policy.html">Pricing</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
     <header>
         <h1>About Us</h1>
     </header>
@@ -138,6 +441,29 @@
         <p><strong>Registration No:</strong> 2024/123456/07</p>
         <p><strong>Location:</strong> Protea Glen, Johannesburg, South Africa</p>
     </section>
+<!-- Footer Section -->
+<footer>
+    <p>&copy; 2024 Madya Swa Nyuku Business Services (Pty) Ltd. All rights reserved.</p>
+    
+    <!-- Privacy Policy and Terms links before the registration number -->
+    <div class="footer-links">
+        <a href="privacy-policy.html">Privacy Policy</a> | 
+        <a href="terms.html">Terms</a>
+    </div>
+    
+    <p class="footer-bottom">Registration No: 2024/123456/07</p>
+    <p class="footer-bottom">We are a professional pest control company providing eco-friendly solutions to protect your home or business from harmful pests.</p>
 
+    <!-- Social Media Icons placed directly with footer text -->
+    <div class="social-icons">
+        <a href="https://www.facebook.com/madyswanpestcontrol" target="_blank" class="fab fa-facebook-f"></a>
+        <a href="https://www.tiktok.com/@madyswanpest" target="_blank" class="fab fa-tiktok"></a>
+        <a href="https://www.instagram.com/madyswanpestcontrol" target="_blank" class="fab fa-instagram"></a>
+        <a href="https://www.linkedin.com/company/madyswanpestcontrol" target="_blank" class="fab fa-linkedin-in"></a>
+    </div>
+</footer>
+
+</body>
+</html>
 </body>
 </html>
