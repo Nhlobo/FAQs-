@@ -1,337 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>About Us | Madya Swa Nyuku Business Services (Pty) Ltd</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-    <style>
-/* Global Styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Roboto', sans-serif;
-    font-size: 14px;
-    line-height: 1.6;
-    background-color: #f9f9f9;
-    color: #333;
-}
-
-/* Heading Styles */
-h1, h2 {
-    font-family: 'Arial', sans-serif;
-    color: #333;
-}
-
-h1 {
-    font-size: 2.5rem;
-    margin-bottom: 15px;
-}
-
-h2 {
-    font-size: 2rem;
-    color: #555;
-    margin-bottom: 20px;
-}
-
-/* Paragraph Styling */
-p {
-    font-size: 1.1em;
-    line-height: 1.6;
-    margin: 12px 0;
-    color: #555;
-}
-
-/* Header Styling */
-header {
-    background: radial-gradient(circle, rgba(249, 250, 7, 1) 0%, rgba(18, 15, 238, 1) 100%);
-    color: white;
-    padding: 20px 0;
-    text-align: center;
-}
-
-header nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    padding: 0;
-}
-
-header nav ul li {
-    margin: 0 12px;
-}
-
-header nav ul li a {
-    text-decoration: none;
-    color: white;
-    font-size: 16px;
-    transition: color 0.3s ease;
-}
-
-header nav ul li a:hover {
-    color: #1abc9c;
-}
-
-/* Footer Styling */
-footer {
-    background-color: #120fee;
-    color: white;
-    text-align: center;
-    padding: 15px 0;
-}
-
-footer p {
-    font-size: 13px;
-    color: white;
-    margin-bottom: 8px;
-}
-
-footer .footer-bottom {
-    font-size: 11px;
-    color: #95a5a6;
-}
-
-footer .footer-links a {
-    font-size: 13px;
-    color: white;
-    text-decoration: none;
-    margin: 0 8px;
-}
-
-footer .footer-links a:hover {
-    text-decoration: underline;
-}
-
-footer .social-icons {
-    display: inline-block;
-    margin-top: 12px;
-}
-
-footer .social-icons a {
-    margin: 0 8px;
-    font-size: 20px;
-    color: white;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-footer .social-icons a:hover {
-    color: #1abc9c;
-}
-
-/* Section Styling */
-section {
-    margin-bottom: 40px;
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-}
-
-/* Team Member Styling */
-.team-member {
-    background-color: #ecf0f1;
-    padding: 20px;
-    margin-top: 15px;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.team-member h3 {
-    font-size: 1.8rem;
-    color: #34495e;
-    margin-bottom: 10px;
-}
-
-.team-member p {
-    color: #7f8c8d;
-    margin-bottom: 8px;
-}
-
-/* About Section Layout */
-.about-content {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
-    gap: 30px;
-}
-
-.about-text {
-    flex: 1;
-    max-width: 600px;
-    margin: 20px;
-    line-height: 1.6;
-}
-
-.about-text p {
-    margin-bottom: 15px;
-}
-
-/* Responsive Design */
-@media screen and (max-width: 768px) {
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us</title>
+  <style>
+    /* Basic styling for the page */
     body {
-        font-size: 13px; /* Adjust font size for medium devices */
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
     }
 
-    h1 {
-        font-size: 2rem; /* Adjust heading size */
+    #contact-section {
+      padding: 20px;
+      background-color: #fff;
+      margin: 20px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     }
 
-    h2 {
-        font-size: 1.8rem; /* Adjust subheading size */
+    .contact-info {
+      margin-bottom: 20px;
     }
 
-    header nav ul {
-        flex-direction: column; /* Stack navigation items */
+    .google-map iframe {
+      width: 100%;
+      height: 450px;
+      border: 0;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     }
 
-    header nav ul li {
-        margin: 8px 0; /* Adjust margins for vertical layout */
+    h2, h3 {
+      color: #333;
     }
 
-    footer p, footer .footer-links a {
-        font-size: 12px; /* Adjust footer text size */
+    p {
+      color: #666;
+      font-size: 16px;
     }
-
-    footer .social-icons a {
-        font-size: 18px; /* Adjust icon size */
-    }
-
-    /* About Section */
-    .about-content {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    /* Team Section */
-    .team {
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .team-member {
-        max-width: 100%;
-        margin-top: 10px;
-    }
-}
-
-/* Large Screens (Desktops) */
-@media screen and (min-width: 1024px) {
-    body {
-        font-size: 14px;
-    }
-
-    h1 {
-        font-size: 2.5rem; /* Larger heading size */
-    }
-
-    h2 {
-        font-size: 2rem;
-    }
-
-    header nav ul {
-        flex-direction: row; /* Horizontal layout */
-    }
-
-    footer p {
-        font-size: 13px;
-    }
-
-    footer .footer-links a {
-        font-size: 14px;
-    }
-
-    footer .social-icons a {
-        font-size: 20px;
-    }
-}
- 
-    </style>
+  </style>
 </head>
 <body>
 
-<!-- Header Section -->
-<header>
-    <nav>
-       <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="services.html">Our Services</a></li>
-            <li><a href="privacy-policy.html">Pricing</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
-</header>
-
-    <header>
-        <h1>About Us</h1>
-    </header>
-
-    <section>
-        <h2>Welcome to Madya Swa Nyuku Business Services (Pty) Ltd</h2>
-        <div class="about-content">
-            <div class="about-text">
-                <p>Madya Swa Nyuku Business Services (Pty) Ltd is a proudly South African, registered pest control company based in Protea Glen, Johannesburg. Our team is dedicated to delivering eco-friendly, safe, and professional pest control services for both residential and commercial properties. We specialize in comprehensive pest management solutions, including termite control, rodent eradication, bed bug treatments, and more.</p>
-                <p>As a registered business under the South African Companies Act, we are fully committed to providing guaranteed, reliable pest control services with an emphasis on safety and sustainability. Our team is highly trained, and we use only eco-friendly products that are safe for your family, pets, and the environment.</p>
-                <p>With years of industry experience, we understand the importance of offering tailored solutions that effectively address the unique pest challenges faced by our clients. Whether you are dealing with pests in your home or business, you can trust Madya Swa Nyuku Business Services to deliver prompt and efficient results every time.</p>
-                <p>Protect your property with our trusted and professional pest control services. We are here to help you maintain a pest-free, safe environment for your family, employees, and clients.</p>
-            </div>
-            <div class="about-image">
-                <!-- Replace the URL with your team picture or logo -->
-                <img src="Pest-Control.png" alt="Founder and Team" style="width: 100%; max-width: 500px; border-radius: 10px;">
-            </div>
-        </div>
-    </section>
-
-    <section>
-        <h2>Meet Our Team</h2>
-        <div class="team">
-            <div class="team-member">
-                <img src="dead,cockcroach.jpg" alt="Founder/CEO" />
-                <h3>Madya Swa Nyuku</h3>
-                <p>Founder & CEO</p>
-            </div>
-            <div class="team-member">
-                <img src="dead,cockcroach.jpg" alt="Pest Control Expert" />
-                <h3>[Worker’s Name]</h3>
-                <p>Pest Control Expert</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="company-info">
-        <p><strong>Registered Business Name:</strong> Madya Swa Nyuku Business Services (Pty) Ltd</p>
-        <p><strong>Registration No:</strong> 2024/123456/07</p>
-        <p><strong>Location:</strong> Protea Glen, Johannesburg, South Africa</p>
-    </section>
-<!-- Footer Section -->
-<footer>
-    <p>&copy; 2024 Madya Swa Nyuku Business Services (Pty) Ltd. All rights reserved.</p>
-    
-    <!-- Privacy Policy and Terms links before the registration number -->
-    <div class="footer-links">
-        <a href="privacy-policy.html">Privacy Policy</a> | 
-        <a href="terms.html">Terms</a>
+  <section id="contact-section">
+    <div class="contact-info">
+      <h2>Contact Us</h2>
+      <p>Address: Protea Glen Extension 28, Soweto</p>
+      <p>Phone: (123) 456-7890</p>
+      <p>Email: info@example.com</p>
     </div>
-    
-    <p class="footer-bottom">Registration No: 2024/123456/07</p>
-    <p class="footer-bottom">We are a professional pest control company providing eco-friendly solutions to protect your home or business from harmful pests.</p>
 
-    <!-- Social Media Icons placed directly with footer text -->
-    <div class="social-icons">
-        <a href="https://www.facebook.com/madyswanpestcontrol" target="_blank" class="fab fa-facebook-f"></a>
-        <a href="https://www.tiktok.com/@madyswanpest" target="_blank" class="fab fa-tiktok"></a>
-        <a href="https://www.instagram.com/madyswanpestcontrol" target="_blank" class="fab fa-instagram"></a>
-        <a href="https://www.linkedin.com/company/madyswanpestcontrol" target="_blank" class="fab fa-linkedin-in"></a>
+    <div class="google-map">
+      <h3>Find Us on the Map</h3>
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7155.30922483306!2d27.762851772117667!3d-26.272870813304213!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e95a49773cc2307%3A0xa2f6845eb69a05e6!2sProtea%20Glen%20Extension%2028%2C%20Soweto!5e0!3m2!1sen!2sza!4v1733948585755!5m2!1sen!2sza"
+        width="600" 
+        height="450" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
     </div>
-</footer>
+  </section>
 
-</body>
-</html>
 </body>
 </html>
